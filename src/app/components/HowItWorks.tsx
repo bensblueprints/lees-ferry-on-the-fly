@@ -13,7 +13,7 @@ const steps = [
     icon: CalendarCheck,
     number: "01",
     title: "Book Online or Call",
-    text: "Reserve your shuttle time online or call Dave directly at (928) 380-4504. Choose your date, trip type, and whether you need gear rentals.",
+    text: "Reserve your trip by calling Dave directly at (928) 380-4504 or email info@leesferryonthefly.com. A $100 deposit is required to secure your date.",
     color: "text-water-light",
     border: "border-water-light/20",
   },
@@ -21,23 +21,23 @@ const steps = [
     icon: MapPin,
     number: "02",
     title: "Meet at Lees Ferry",
-    text: "Arrive at the Lees Ferry boat launch in Marble Canyon, AZ. We'll get you checked in, load up your gear, and give a quick safety briefing.",
+    text: "Arrive at the Lees Ferry boat launch in Marble Canyon, AZ. Trips typically start at 7:00 AM. We recommend staying at the nearby Marble Canyon Lodge.",
     color: "text-river-teal",
     border: "border-river-teal/20",
   },
   {
     icon: Zap,
     number: "03",
-    title: "Jet Boat Ride Upriver",
-    text: "Hang on and enjoy the ride! Our jet boat blasts upriver through the Horseshoe Bend corridor. The canyon views from water level are unreal.",
+    title: "Hit the Water",
+    text: "Whether it's a guided fishing charter or a backhaul shuttle, you'll travel in our custom Koffler jet boat with USCG Licensed Captain Dave at the helm.",
     color: "text-sandstone",
     border: "border-sandstone/20",
   },
   {
     icon: Sunset,
     number: "04",
-    title: "Paddle Back Down",
-    text: "We drop you at your chosen point upstream. From there, it's all downhill — paddle at your pace through crystal waters, hidden grottoes, and towering canyon walls back to Lees Ferry.",
+    title: "An Unforgettable Day",
+    text: "8 hours on the water fishing for trophy trout in gin-clear tailwaters, or a scenic paddle back through Horseshoe Bend. Balance due at the end of your trip.",
     color: "text-sunset-gold",
     border: "border-sunset-gold/20",
   },
@@ -73,7 +73,6 @@ export default function HowItWorks() {
         }
       );
 
-      // Animate the connecting line
       gsap.fromTo(
         ".hiw-line",
         { scaleY: 0 },
@@ -93,13 +92,13 @@ export default function HowItWorks() {
   );
 
   return (
-    <section id="how-it-works" ref={ref} className="relative py-28 md:py-40 overflow-hidden">
+    <section id="how-it-works" ref={ref} className="relative py-32 md:py-44 overflow-hidden">
       <div className="absolute inset-0 canyon-texture opacity-30" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-8 md:px-20">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24">
-          <span className="hiw-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
+        <div className="text-center mb-20 md:mb-28">
+          <span className="hiw-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
             How It Works
           </span>
           <h2 className="hiw-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
@@ -115,13 +114,13 @@ export default function HowItWorks() {
             <div className="hiw-line origin-top w-full h-full bg-gradient-to-b from-water-light/40 via-sandstone/30 to-sunset-gold/40" />
           </div>
 
-          <div className="space-y-1 md:space-y-0">
-            {steps.map((step, i) => {
+          <div className="space-y-2 md:space-y-0">
+            {steps.map((step) => {
               const Icon = step.icon;
               return (
                 <div
                   key={step.number}
-                  className={`hiw-step group relative flex gap-6 md:gap-10 p-6 md:p-8 bg-cool-white/[0.01] border ${step.border} hover:bg-cool-white/[0.03] transition-all duration-500`}
+                  className={`hiw-step group relative flex gap-8 md:gap-12 p-8 md:p-10 bg-cool-white/[0.01] border ${step.border} hover:bg-cool-white/[0.03] transition-all duration-500`}
                 >
                   {/* Step indicator */}
                   <div className="flex-shrink-0 relative z-10">
@@ -136,12 +135,12 @@ export default function HowItWorks() {
 
                   {/* Content */}
                   <div className="flex-1 pt-1">
-                    <div className="flex items-center gap-4 mb-2">
+                    <div className="flex items-center gap-4 mb-3">
                       <span className="text-[10px] tracking-[0.4em] text-cool-white/15">
                         STEP {step.number}
                       </span>
                     </div>
-                    <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-2">
+                    <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-3">
                       {step.title}
                     </h3>
                     <p className="text-cool-white/45 font-light text-[14px] leading-relaxed max-w-lg">

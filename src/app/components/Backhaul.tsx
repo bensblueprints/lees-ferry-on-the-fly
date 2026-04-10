@@ -55,68 +55,83 @@ export default function Backhaul() {
   );
 
   return (
-    <section id="backhaul" ref={ref} className="relative py-28 md:py-40 overflow-hidden">
+    <section id="backhaul" ref={ref} className="relative py-32 md:py-44 overflow-hidden">
       <div className="absolute inset-0 canyon-texture opacity-50" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-river-teal/[0.04] blur-[150px]" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-8 md:px-20">
         {/* Section label centered */}
-        <div className="text-center mb-16 md:mb-20">
-          <span className="bh-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
+        <div className="text-center mb-20 md:mb-24">
+          <span className="bh-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
             The Experience
           </span>
           <h2 className="bh-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
-            What&apos;s a{" "}
-            <span className="italic text-sandstone">Backhaul?</span>
+            Kayak &amp; SUP{" "}
+            <span className="italic text-sandstone">Backhaul</span>
           </h2>
         </div>
 
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20 md:mb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24 md:mb-32">
           <div>
-            <p className="bh-heading text-cool-white/50 text-[15px] md:text-base font-light leading-relaxed mb-8 max-w-lg">
-              A backhaul is your ticket to the ultimate Colorado River adventure.
-              Our jet boat takes you and your kayak or paddleboard{" "}
-              <strong className="text-water-light font-normal">upriver</strong>{" "}
-              from Lees Ferry through the stunning Horseshoe Bend corridor — then you
-              paddle back{" "}
-              <strong className="text-sandstone font-normal">downstream</strong>{" "}
-              through towering red rock canyon walls at your own pace.
+            <p className="bh-heading text-cool-white/55 text-base md:text-lg font-light leading-relaxed mb-8 max-w-lg">
+              Kayak the scenic Horseshoe Bend with our jet boat backhaul shuttle
+              service and rentals. Our custom jet boat carries you and your kayak or
+              paddleboard{" "}
+              <strong className="text-water-light font-normal">10 miles upriver</strong>{" "}
+              from Lees Ferry through calm waters — then you float{" "}
+              <strong className="text-sandstone font-normal">15 miles downstream</strong>{" "}
+              through one of the most dramatic stretches of the Colorado River,
+              from Glen Canyon Dam to Grand Canyon National Park&apos;s entrance.
             </p>
-            <p className="bh-heading text-cool-white/40 text-[14px] font-light leading-relaxed max-w-lg">
-              No fighting the current. No exhausting upstream battle. Just pure
-              downstream bliss through one of the most photographed landscapes
-              on Earth.
+            <div className="flex flex-col sm:flex-row gap-6 mb-8">
+              <div className="p-6 bg-cool-white/[0.03] border border-cool-white/[0.06]">
+                <span className="block font-serif text-3xl text-sandstone mb-1">$80</span>
+                <span className="text-[11px] tracking-[0.2em] uppercase text-cool-white/40">Per Person</span>
+                <p className="text-cool-white/35 text-[12px] mt-2 font-light">
+                  Includes upstream transport for you + one watercraft under 50 lbs
+                </p>
+              </div>
+              <div className="p-6 bg-cool-white/[0.03] border border-cool-white/[0.06]">
+                <span className="block font-serif text-3xl text-sandstone mb-1">From $40</span>
+                <span className="text-[11px] tracking-[0.2em] uppercase text-cool-white/40">Kayak Rentals</span>
+                <p className="text-cool-white/35 text-[12px] mt-2 font-light">
+                  Plus tax and booking fee. SUP rentals also available.
+                </p>
+              </div>
+            </div>
+            <p className="bh-heading text-cool-white/35 text-[13px] font-light leading-relaxed max-w-lg">
+              No canoes or watercraft exceeding 15 feet. No watercraft with frames.
+              Additional $80 charge for gear exceeding 50 lbs total.
             </p>
           </div>
 
           {/* Image */}
           <div className="bh-image relative aspect-[4/3] overflow-hidden">
             <Image
-              src="/images/jetboat-backhaul.jpg"
-              alt="Jet boat backhaul shuttle with kayaks and paddleboards"
+              src="/images/original/backhaul-shuttle.jpeg"
+              alt="Jet boat backhaul shuttle with kayaks on the Colorado River"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-canyon-deep/60 via-transparent to-canyon-deep/20" />
-            {/* Caption overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <span className="text-[10px] tracking-[0.3em] uppercase text-sandstone/80">
-                Captain Dave&apos;s jet boat loaded up and ready
+                Shuttle departures from Lees Ferry launch ramp
               </span>
             </div>
           </div>
         </div>
 
         {/* How the backhaul works - 3 step visual */}
-        <div className="bh-cards grid grid-cols-1 md:grid-cols-3 gap-1">
+        <div className="bh-cards grid grid-cols-1 md:grid-cols-3 gap-2">
           {[
             {
               icon: Anchor,
               step: "01",
               title: "Meet at Lees Ferry",
-              text: "Arrive at the Lees Ferry launch ramp. We load your kayak or paddleboard (or use our rentals) onto the jet boat.",
+              text: "Arrive at the Lees Ferry launch ramp. We load your kayak or paddleboard (or use our rentals) onto the custom Koffler jet boat.",
               accent: "border-river-teal/30 hover:border-river-teal/60",
               iconColor: "text-water-light",
             },
@@ -124,7 +139,7 @@ export default function Backhaul() {
               icon: ArrowUp,
               step: "02",
               title: "Jet Boat Ride Upriver",
-              text: "Hold on tight! We blast upriver through the Horseshoe Bend corridor at full speed. Feel the canyon walls tower above you as we go.",
+              text: "We blast 10 miles upriver through the Horseshoe Bend corridor. The canyon views from water level are absolutely unreal.",
               accent: "border-sandstone/20 hover:border-sandstone/50",
               iconColor: "text-sandstone",
             },
@@ -132,7 +147,7 @@ export default function Backhaul() {
               icon: ArrowDown,
               step: "03",
               title: "Paddle Back in Paradise",
-              text: "We drop you off upstream and you float back down through crystal-clear waters, hidden fern grottoes, and ancient petroglyph walls.",
+              text: "We drop you off upstream and you float 15 miles back through crystal-clear waters, hidden fern grottoes, ancient petroglyphs, and towering canyon walls.",
               accent: "border-sunset-gold/20 hover:border-sunset-gold/50",
               iconColor: "text-sunset-gold",
             },
@@ -141,9 +156,9 @@ export default function Backhaul() {
             return (
               <div
                 key={item.step}
-                className={`bh-card group relative p-8 md:p-10 bg-cool-white/[0.02] border ${item.accent} transition-all duration-600`}
+                className={`bh-card group relative p-10 md:p-12 bg-cool-white/[0.02] border ${item.accent} transition-all duration-600`}
               >
-                <div className="flex items-start justify-between mb-6">
+                <div className="flex items-start justify-between mb-8">
                   <Icon
                     className={`${item.iconColor} group-hover:scale-110 transition-transform duration-500`}
                     size={28}
@@ -153,13 +168,12 @@ export default function Backhaul() {
                     {item.step}
                   </span>
                 </div>
-                <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-3">
+                <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-4">
                   {item.title}
                 </h3>
                 <p className="text-cool-white/45 font-light text-[14px] leading-relaxed">
                   {item.text}
                 </p>
-                {/* Bottom bar on hover */}
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sandstone/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
               </div>
             );
@@ -167,7 +181,7 @@ export default function Backhaul() {
         </div>
 
         {/* Differentiator callout */}
-        <div className="mt-12 flex items-center justify-center gap-3 text-center">
+        <div className="mt-14 flex items-center justify-center gap-3 text-center">
           <Zap className="text-canyon-orange" size={16} strokeWidth={1.5} />
           <span className="text-[12px] tracking-[0.3em] uppercase text-canyon-orange/80 font-light">
             The only jet boat backhaul service at Lees Ferry

@@ -16,11 +16,11 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title:
-    "Lees Ferry On The Fly | Kayak & Paddleboard Shuttles - Horseshoe Bend, AZ",
+    "Lees Ferry On The Fly | Guided Fishing & Kayak Shuttle - Colorado River, AZ",
   description:
-    "Jet boat backhaul shuttles through Horseshoe Bend on the Colorado River. Kayak & paddleboard rentals, guided fishing. Book your adventure with Captain Dave Trimble.",
+    "Guided fly fishing & spin fishing trips on the Colorado River. Jet boat kayak & paddleboard shuttle through Horseshoe Bend. Book with Captain Dave Trimble at (928) 380-4504.",
   keywords:
-    "Horseshoe Bend, kayak shuttle, paddleboard, backhaul, Lees Ferry, Colorado River, jet boat, Arizona, Glen Canyon",
+    "Lees Ferry, fishing guide, fly fishing, spin fishing, Colorado River, Horseshoe Bend, kayak shuttle, backhaul, jet boat, Arizona, trout fishing, Marble Canyon",
 };
 
 export default function RootLayout({

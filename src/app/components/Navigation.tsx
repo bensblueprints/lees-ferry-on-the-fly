@@ -6,10 +6,11 @@ import { Menu, X, Phone } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "The Experience", href: "#backhaul" },
-  { label: "Services", href: "#services" },
+  { label: "Services & Rates", href: "#services" },
+  { label: "Backhaul", href: "#backhaul" },
   { label: "Gallery", href: "#gallery" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "Your Guide", href: "#guide" },
+  { label: "Lodging", href: "#lodging" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -44,7 +45,7 @@ export default function Navigation() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-6 md:px-16 flex items-center justify-between h-[72px]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-20 flex items-center justify-between h-[76px]">
           {/* Logo */}
           <a
             href="#"
@@ -123,7 +124,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="fixed inset-0 z-40 bg-canyon-deep/[0.98] backdrop-blur-2xl flex flex-col items-center justify-center gap-6"
+            className="fixed inset-0 z-40 bg-canyon-deep/[0.98] backdrop-blur-2xl flex flex-col items-center justify-center gap-7"
           >
             {navLinks.map((l, i) => (
               <motion.button
@@ -141,8 +142,8 @@ export default function Navigation() {
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.35 }}
-              className="mt-6 flex flex-col items-center gap-4"
+              transition={{ delay: 0.4, duration: 0.35 }}
+              className="mt-8 flex flex-col items-center gap-5"
             >
               <a
                 href="tel:+19283804504"

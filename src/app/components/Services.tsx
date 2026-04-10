@@ -5,50 +5,58 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { Ship, Waves, Package, Fish, ArrowRight } from "lucide-react";
+import { Ship, Fish, Anchor, ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    icon: Ship,
-    title: "Horseshoe Bend Kayak Shuttle",
-    description:
-      "Our flagship experience. Jet boat ride upriver through the Horseshoe Bend corridor, then paddle your kayak back downstream through one of the most dramatic canyon stretches in the American West.",
-    image: "/images/paddleboard-canyon.jpg",
-    price: "From $75",
-    tag: "Most Popular",
-    features: ["Round-trip jet boat shuttle", "Life jackets provided", "All skill levels welcome", "Flexible drop-off points"],
-  },
-  {
-    icon: Waves,
-    title: "Paddleboard Shuttle",
-    description:
-      "Same incredible jet boat ride, same jaw-dropping scenery — but on a stand-up paddleboard. Glide through crystal-clear waters with towering sandstone walls on either side.",
-    image: "/images/paddleboard-cliffs.jpg",
-    price: "From $75",
-    tag: null,
-    features: ["SUP-friendly jet boat loading", "Calm downstream waters", "Photo opportunities galore", "Beginners welcome"],
-  },
-  {
-    icon: Package,
-    title: "Kayak & SUP Rentals",
-    description:
-      "Don't have your own gear? No problem. We offer high-quality kayak and stand-up paddleboard rentals so you can experience the Colorado River without hauling your own equipment.",
-    image: "/images/paddleboard-group.jpg",
-    price: "From $45",
-    tag: null,
-    features: ["Premium inflatable SUPs", "Sit-on-top kayaks", "Paddles & PFDs included", "Dry bags available"],
-  },
-  {
     icon: Fish,
-    title: "Guided Fishing Trips",
+    title: "Fly Fishing Guide Trip",
     description:
-      "Lees Ferry is one of the top trout fisheries in the Southwest. Join Captain Dave for a guided fishing trip targeting trophy rainbow trout in the legendary tailwaters below Glen Canyon Dam.",
-    image: "/images/colorado-river-vista.jpg",
-    price: "Call for rates",
+      "Experience world-class trout fishing in the gin-clear tailwaters below Glen Canyon Dam. Your guide Dave Trimble has logged hundreds of guide days since the 1990s on this legendary stretch of the Colorado River.",
+    image: "/images/original/stephs-brown-trout.jpg",
+    price: "$600",
+    priceNote: "1-2 anglers",
+    tag: "Guided Fishing",
+    features: [
+      "8 hours on the water",
+      "Sage & Echo fly rods provided",
+      "Custom hand-tied flies & lures",
+      "USCG Licensed Captain",
+    ],
+  },
+  {
+    icon: Anchor,
+    title: "Spin Fishing Guide Trip",
+    description:
+      "Perfect for groups up to 4 anglers. Target trophy rainbow and brown trout with expert guidance. All tackle, fuel, and custom Koffler jet boat included. We do NOT fly fish 3 or 4 anglers.",
+    image: "/images/original/spring-fishing.jpg",
+    price: "$700",
+    priceNote: "Up to 3 anglers",
     tag: null,
-    features: ["Trophy rainbow trout", "All tackle provided", "Expert instruction", "Half & full day options"],
+    features: [
+      "4 anglers available at $800",
+      "All tackle & lures included",
+      "Custom Koffler jet boat",
+      "$25 per non-fishing passenger",
+    ],
+  },
+  {
+    icon: Ship,
+    title: "Water Taxi / Backhaul Shuttle",
+    description:
+      "Our custom jet boat takes you and your kayak or paddleboard upriver from Lees Ferry through the stunning Horseshoe Bend corridor — then you paddle back downstream through 15 miles of towering red rock canyon walls.",
+    image: "/images/original/kayak-horseshoe.jpg",
+    price: "$80",
+    priceNote: "Per person",
+    tag: "Most Popular",
+    features: [
+      "10-mile upstream transport",
+      "Kayak & SUP rentals from $40",
+      "Flexible scheduling",
+      "All skill levels welcome",
+    ],
   },
 ];
 
@@ -86,23 +94,27 @@ export default function Services() {
   );
 
   return (
-    <section id="services" ref={ref} className="relative py-28 md:py-40 warm-section overflow-hidden">
+    <section id="services" ref={ref} className="relative py-32 md:py-44 warm-section overflow-hidden">
       <div className="absolute inset-0 canyon-texture opacity-30" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-8 md:px-20">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24">
-          <span className="svc-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
+        <div className="text-center mb-20 md:mb-28">
+          <span className="svc-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
             Our Services
           </span>
-          <h2 className="svc-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
-            Your Adventure,{" "}
-            <span className="italic text-sandstone">Your Way</span>
+          <h2 className="svc-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-6">
+            2025 Guide{" "}
+            <span className="italic text-sandstone">Rates</span>
           </h2>
+          <p className="svc-heading text-cool-white/40 text-base font-light max-w-2xl mx-auto leading-relaxed">
+            Guided fishing trips and jet boat shuttle service on the Colorado
+            River at Lees Ferry. Maximum 4 people per boat.
+          </p>
         </div>
 
         {/* Services grid */}
-        <div className="svc-grid grid grid-cols-1 lg:grid-cols-2 gap-1">
+        <div className="svc-grid grid grid-cols-1 lg:grid-cols-3 gap-2">
           {services.map((svc) => {
             const Icon = svc.icon;
             return (
@@ -111,13 +123,13 @@ export default function Services() {
                 className="svc-card group relative bg-cool-white/[0.015] border border-cool-white/[0.04] hover:border-sandstone/20 transition-all duration-600 overflow-hidden"
               >
                 {/* Image strip */}
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-60 overflow-hidden">
                   <Image
                     src={svc.image}
                     alt={svc.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-canyon-deep via-canyon-deep/40 to-transparent" />
 
@@ -129,16 +141,19 @@ export default function Services() {
                   )}
 
                   {/* Price */}
-                  <div className="absolute bottom-4 right-4">
-                    <span className="font-serif text-2xl text-sandstone">
+                  <div className="absolute bottom-4 right-4 text-right">
+                    <span className="block font-serif text-3xl text-sandstone">
                       {svc.price}
+                    </span>
+                    <span className="block text-[10px] tracking-[0.2em] uppercase text-cool-white/50 mt-0.5">
+                      {svc.priceNote}
                     </span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-7 md:p-8">
-                  <div className="flex items-center gap-3 mb-4">
+                <div className="p-8 md:p-10">
+                  <div className="flex items-center gap-3 mb-5">
                     <Icon
                       className="text-water-light"
                       size={22}
@@ -149,18 +164,18 @@ export default function Services() {
                     </h3>
                   </div>
 
-                  <p className="text-cool-white/45 font-light text-[14px] leading-relaxed mb-6">
+                  <p className="text-cool-white/45 font-light text-[14px] leading-relaxed mb-8">
                     {svc.description}
                   </p>
 
                   {/* Features */}
-                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+                  <ul className="space-y-3 mb-8">
                     {svc.features.map((f) => (
                       <li
                         key={f}
-                        className="text-[12px] text-cool-white/35 font-light flex items-start gap-2"
+                        className="text-[13px] text-cool-white/40 font-light flex items-start gap-3"
                       >
-                        <span className="w-1 h-1 rounded-full bg-sandstone/60 mt-1.5 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-sandstone/60 mt-1.5 flex-shrink-0" />
                         {f}
                       </li>
                     ))}
@@ -180,6 +195,28 @@ export default function Services() {
               </div>
             );
           })}
+        </div>
+
+        {/* What's included callout */}
+        <div className="mt-16 p-8 md:p-12 bg-cool-white/[0.02] border border-cool-white/[0.04]">
+          <h3 className="font-serif text-2xl text-cool-white mb-6 text-center">
+            What&apos;s Included in Every Guided Charter
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+            {[
+              "USCG Licensed Captain",
+              "Custom Koffler Jet Boat",
+              "Fuel",
+              "Fly Rods & Tackle",
+              "8 Hours on the Water",
+              "Flies & Lures",
+            ].map((item) => (
+              <div key={item} className="text-cool-white/45 text-[13px] font-light">
+                <span className="block w-2 h-2 rounded-full bg-sandstone/50 mx-auto mb-3" />
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

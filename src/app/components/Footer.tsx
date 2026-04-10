@@ -5,23 +5,33 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const links = {
   Services: [
-    "Kayak Shuttle",
-    "Paddleboard Shuttle",
-    "Gear Rentals",
-    "Guided Fishing",
+    { label: "Fly Fishing Trips", href: "#services" },
+    { label: "Spin Fishing Trips", href: "#services" },
+    { label: "Backhaul Shuttle", href: "#backhaul" },
+    { label: "Kayak & SUP Rentals", href: "#backhaul" },
   ],
-  Info: ["How It Works", "What to Bring", "FAQ", "Cancellation Policy"],
-  Connect: ["Instagram", "Facebook", "Google Reviews", "TripAdvisor"],
+  Info: [
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "What to Bring", href: "#faq" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Cancellation Policy", href: "#booking" },
+  ],
+  Area: [
+    { label: "Marble Canyon Lodge", href: "#lodging" },
+    { label: "Lodging & Dining", href: "#lodging" },
+    { label: "Meet Your Guide", href: "#guide" },
+    { label: "Gallery", href: "#gallery" },
+  ],
 };
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-cool-white/[0.04]">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-16 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
+      <div className="max-w-[1440px] mx-auto px-8 md:px-20 py-20 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-center gap-3 mb-6">
               <Image
                 src="/images/logo.png"
                 alt="Lees Ferry On The Fly"
@@ -38,20 +48,20 @@ export default function Footer() {
                 </span>
               </div>
             </div>
-            <p className="text-cool-white/35 text-[13px] font-light leading-relaxed max-w-sm mb-6">
-              The premier jet boat kayak &amp; paddleboard shuttle service on the
-              Colorado River at Lees Ferry, Arizona. Your gateway to Horseshoe
-              Bend from the water.
+            <p className="text-cool-white/35 text-[14px] font-light leading-relaxed max-w-sm mb-8">
+              Guided fly fishing &amp; spin fishing trips, jet boat kayak &amp;
+              paddleboard shuttle service on the Colorado River at Lees Ferry,
+              Arizona.
             </p>
-            <div className="space-y-2">
-              <a href="tel:+19283804504" className="flex items-center gap-2 text-sandstone text-[13px] font-light hover:text-canyon-orange transition-colors">
-                <Phone size={13} strokeWidth={1.5} /> (928) 380-4504
+            <div className="space-y-3">
+              <a href="tel:+19283804504" className="flex items-center gap-3 text-sandstone text-[14px] font-light hover:text-canyon-orange transition-colors">
+                <Phone size={14} strokeWidth={1.5} /> (928) 380-4504
               </a>
-              <a href="mailto:dave@leesferryonthefly.com" className="flex items-center gap-2 text-cool-white/40 text-[13px] font-light hover:text-sandstone transition-colors">
-                <Mail size={13} strokeWidth={1.5} /> dave@leesferryonthefly.com
+              <a href="mailto:info@leesferryonthefly.com" className="flex items-center gap-3 text-cool-white/40 text-[14px] font-light hover:text-sandstone transition-colors">
+                <Mail size={14} strokeWidth={1.5} /> info@leesferryonthefly.com
               </a>
-              <span className="flex items-center gap-2 text-cool-white/40 text-[13px] font-light">
-                <MapPin size={13} strokeWidth={1.5} /> Marble Canyon, AZ 86036
+              <span className="flex items-center gap-3 text-cool-white/40 text-[14px] font-light">
+                <MapPin size={14} strokeWidth={1.5} /> Marble Canyon, AZ 86036
               </span>
             </div>
           </div>
@@ -59,14 +69,14 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(links).map(([title, items]) => (
             <div key={title}>
-              <h4 className="text-[9px] tracking-[0.4em] uppercase text-sandstone mb-5">
+              <h4 className="text-[9px] tracking-[0.4em] uppercase text-sandstone mb-6">
                 {title}
               </h4>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3">
                 {items.map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-cool-white/30 text-[13px] font-light hover:text-sandstone transition-colors duration-300">
-                      {item}
+                  <li key={item.label}>
+                    <a href={item.href} className="text-cool-white/30 text-[14px] font-light hover:text-sandstone transition-colors duration-300">
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -76,13 +86,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="cinema-bar mb-6" />
-        <div className="flex flex-col md:flex-row justify-between items-center gap-3">
-          <span className="text-cool-white/20 text-[11px] font-light">
+        <div className="cinema-bar mb-8" />
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <span className="text-cool-white/20 text-[12px] font-light">
             &copy; {new Date().getFullYear()} Lees Ferry On The Fly. All rights reserved.
           </span>
-          <span className="text-cool-white/20 text-[11px] font-light">
-            Dave Trimble &middot; Owner / Captain &middot; Marble Canyon, Arizona
+          <span className="text-cool-white/20 text-[12px] font-light">
+            Dave Trimble &middot; Owner / USCG Licensed Captain &middot; Marble Canyon, Arizona
           </span>
         </div>
       </div>

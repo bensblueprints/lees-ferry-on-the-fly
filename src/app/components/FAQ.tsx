@@ -10,36 +10,44 @@ gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
-    q: "What exactly is a backhaul shuttle?",
-    a: "A backhaul is a jet boat ride upriver from Lees Ferry through the Horseshoe Bend corridor. We load your kayak, paddleboard, or rental gear on our boat, take you upstream, and drop you off. Then you paddle back downstream at your own pace through the stunning canyon — no fighting the current!",
+    q: "What are the 2025 guide rates?",
+    a: "Fly fishing for 1-2 anglers is $600. Spin fishing for up to 3 anglers is $700. Four anglers (spin fishing only) is $800. There's a $25 charge for any non-fishing passenger. Maximum 4 people per boat. We do NOT fly fish 3 or 4 anglers.",
+  },
+  {
+    q: "What's included in a guided fishing charter?",
+    a: "Every guided charter includes a USCG licensed captain, our custom Koffler jet boat, fuel, fly rods (Sage & Echo), Galvan fly reels, hand-tied flies and lures, and 8 hours on the water — typically starting around 7:00 AM.",
+  },
+  {
+    q: "What should I bring on a fishing trip?",
+    a: "Bring snacks, drinks, and lunch. You'll also want a valid Arizona fishing license (purchasable online), polarized sunglasses, sunscreen, and 9-foot 5x leaders with 4x-5x fluorocarbon tippet. Waders and boots are available for rental locally at Marble Canyon Lodge.",
+  },
+  {
+    q: "What is a backhaul shuttle?",
+    a: "A backhaul is a jet boat ride upriver from Lees Ferry through the Horseshoe Bend corridor. We load your kayak, paddleboard, or rental gear on our boat, take you 10 miles upstream, and drop you off. Then you paddle 15 miles back downstream at your own pace — no fighting the current!",
+  },
+  {
+    q: "How much does the backhaul shuttle cost?",
+    a: "The shuttle is $80 per person for day trips, which includes upstream transport for one person plus one watercraft under 50 lbs. Kayak rentals start at $40 plus tax and booking fee. There's an additional $80 charge for gear exceeding 50 lbs total.",
   },
   {
     q: "Do I need my own kayak or paddleboard?",
-    a: "Nope! We offer high-quality kayak and stand-up paddleboard rentals. Of course, you're welcome to bring your own gear too. We can accommodate most standard-size kayaks and SUPs on the jet boat.",
+    a: "No! We offer kayak and stand-up paddleboard rentals starting at $40. You're also welcome to bring your own gear — just no canoes or watercraft exceeding 15 feet, and no watercraft with frames.",
   },
   {
-    q: "How long does the paddle back take?",
-    a: "Most paddlers take 3-5 hours to float back to Lees Ferry, depending on how many stops you make along the way. There's no rush — the current does most of the work. Many people spend time exploring hidden grottoes, photographing petroglyphs, and swimming in crystal-clear side channels.",
+    q: "What's the booking and cancellation policy?",
+    a: "We require a $100 non-refundable deposit to reserve a day. The balance is due at the end of your trip. If you wish to reschedule, you have 6 months from cancellation to rebook (one reschedule only). Cancellations within 15 days of the trip receive NO refund or credit. All cancellations must be submitted in writing.",
   },
   {
-    q: "Do I need experience kayaking or paddleboarding?",
-    a: "Not at all! The downstream float is gentle and beginner-friendly. The Colorado River below the dam flows at a manageable pace with no rapids in this stretch. We'll give you a safety briefing and basic instruction before you head out.",
+    q: "Where should I stay while visiting?",
+    a: "We highly recommend the Marble Canyon Lodge — it's located just minutes from the Lees Ferry boat launch. They have comfortable rooms, an on-site restaurant, and carry local fly patterns and lures. Call them at 1-800-726-1789 to book your room.",
   },
   {
-    q: "What should I bring?",
-    a: "Sunscreen, hat, sunglasses (with a strap!), water, snacks, a waterproof phone case, and a change of clothes. We provide life jackets. In summer, water shoes and quick-dry clothing are recommended. In cooler months, bring layers.",
+    q: "What kind of fish will I catch?",
+    a: "Lees Ferry is one of the top trout fisheries in the Southwest. You'll be targeting trophy rainbow and brown trout in the gin-clear tailwaters below Glen Canyon Dam. The water temperature stays between 46-62°F year-round, making it a year-round fishery.",
   },
   {
-    q: "Is this safe for kids?",
-    a: "Yes! Families love this trip. Kids should be comfortable around water and able to sit in a kayak or on a paddleboard. We recommend ages 6+ for the full shuttle experience. Life jackets are required and provided for all ages.",
-  },
-  {
-    q: "What's the water temperature?",
-    a: "The Colorado River below Glen Canyon Dam stays between 46-62°F year-round because it comes from the bottom of Lake Powell. It's refreshing in summer! In cooler months, wetsuits or splash gear are recommended.",
-  },
-  {
-    q: "How do I book?",
-    a: "Call Dave directly at (928) 380-4504 or use the booking form on this page. We recommend booking at least a few days in advance, especially during peak season (March-October). Same-day availability is sometimes possible — just give us a call!",
+    q: "How do I book a trip?",
+    a: "Call Dave Trimble directly at (928) 380-4504 or email info@leesferryonthefly.com. We recommend booking at least a few days in advance, especially during peak season (March-October).",
   },
 ];
 
@@ -78,13 +86,13 @@ export default function FAQ() {
   );
 
   return (
-    <section id="faq" ref={ref} className="relative py-28 md:py-40 warm-section overflow-hidden">
+    <section id="faq" ref={ref} className="relative py-32 md:py-44 warm-section overflow-hidden">
       <div className="absolute inset-0 canyon-texture opacity-30" />
 
-      <div className="relative z-10 max-w-[900px] mx-auto px-6 md:px-16">
+      <div className="relative z-10 max-w-[900px] mx-auto px-8 md:px-20">
         {/* Header */}
-        <div className="text-center mb-14 md:mb-20">
-          <span className="faq-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
+        <div className="text-center mb-16 md:mb-24">
+          <span className="faq-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
             FAQ
           </span>
           <h2 className="faq-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
@@ -104,7 +112,7 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between py-6 text-left group"
+                  className="w-full flex items-center justify-between py-7 text-left group"
                 >
                   <span
                     className={`font-serif text-lg md:text-xl pr-8 transition-colors duration-300 ${
@@ -123,7 +131,7 @@ export default function FAQ() {
                 </button>
                 <div className={`faq-answer ${isOpen ? "open" : ""}`}>
                   <div>
-                    <p className="text-cool-white/45 font-light text-[14px] leading-relaxed pb-6 pr-12">
+                    <p className="text-cool-white/45 font-light text-[14px] leading-relaxed pb-7 pr-12">
                       {faq.a}
                     </p>
                   </div>

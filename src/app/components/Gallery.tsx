@@ -11,17 +11,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
   {
-    src: "/images/colorado-river-vista.jpg",
-    alt: "Colorado River canyon vista with mirror reflections",
-    title: "Marble Canyon",
-    subtitle: "Mirror-still waters at dawn",
-    span: "md:col-span-2 md:row-span-2",
+    src: "/images/original/drone-aerial-river.jpg",
+    alt: "Aerial drone view of the Colorado River at Lees Ferry",
+    title: "Lees Ferry",
+    subtitle: "Aerial view of the Colorado",
+    span: "col-span-2 row-span-2",
   },
   {
-    src: "/images/paddleboard-canyon.jpg",
-    alt: "Paddleboarder exploring narrow red rock canyon",
-    title: "Hidden Grottoes",
-    subtitle: "Explore secret canyon passages",
+    src: "/images/original/stephs-brown-trout.jpg",
+    alt: "Brown trout caught fly fishing at Lees Ferry",
+    title: "Trophy Trout",
+    subtitle: "Brown trout on the fly",
     span: "",
   },
   {
@@ -32,45 +32,52 @@ const photos = [
     span: "",
   },
   {
-    src: "/images/boat-canyon-passage.jpg",
-    alt: "Navigating narrow canyon passage by boat",
-    title: "Canyon Passage",
-    subtitle: "Navigating the narrows",
+    src: "/images/original/guide-on-river.jpg",
+    alt: "Guide Dave on the Colorado River with clients",
+    title: "On the Water",
+    subtitle: "A day with Captain Dave",
     span: "",
   },
   {
-    src: "/images/crystal-waters.jpg",
-    alt: "Crystal clear emerald waters with red rock reflections",
-    title: "Crystal Waters",
-    subtitle: "Emerald clarity below the dam",
-    span: "md:col-span-2",
-  },
-  {
-    src: "/images/paddleboard-cliffs.jpg",
-    alt: "Paddleboarder against massive red canyon cliffs",
-    title: "Towering Walls",
-    subtitle: "1,000 feet of sandstone above",
+    src: "/images/original/winter-fishing.jpg",
+    alt: "Winter fly fishing on the Colorado River",
+    title: "Year-Round Fishing",
+    subtitle: "Fish in every season",
     span: "",
   },
   {
-    src: "/images/paddleboard-group.jpg",
-    alt: "Group of paddleboarders on the Colorado River",
-    title: "Group Adventures",
-    subtitle: "Bring the whole crew",
+    src: "/images/original/kayak-horseshoe.jpg",
+    alt: "Kayaking through Horseshoe Bend canyon",
+    title: "Kayak the Canyon",
+    subtitle: "Paddle through paradise",
     span: "",
   },
   {
-    src: "/images/petroglyphs.jpg",
-    alt: "Ancient petroglyphs on canyon rock walls",
-    title: "Ancient History",
-    subtitle: "Petroglyphs along the route",
-    span: "md:col-span-2",
+    src: "/images/original/spring-fishing.jpg",
+    alt: "Spring fishing on the Colorado River at Lees Ferry",
+    title: "Spring Season",
+    subtitle: "Peak trout fishing",
+    span: "col-span-2",
   },
   {
-    src: "/images/canyon-ferns.jpg",
-    alt: "Green ferns growing from red canyon walls above water",
-    title: "Hanging Gardens",
-    subtitle: "Desert oasis hidden in stone",
+    src: "/images/original/fishing-action.jpg",
+    alt: "Angler fighting a fish on the Colorado River",
+    title: "Tight Lines",
+    subtitle: "The fight is on",
+    span: "",
+  },
+  {
+    src: "/images/original/colorado-river-scenic.jpg",
+    alt: "Scenic Colorado River canyon landscape",
+    title: "Canyon Views",
+    subtitle: "Navajo sandstone cliffs",
+    span: "",
+  },
+  {
+    src: "/images/original/sunset-canyon.jpg",
+    alt: "Sunset over the canyon at Lees Ferry",
+    title: "Golden Hour",
+    subtitle: "Sunset on the Colorado",
     span: "",
   },
 ];
@@ -109,27 +116,27 @@ export default function Gallery() {
   );
 
   return (
-    <section id="gallery" ref={ref} className="relative py-28 md:py-40 overflow-hidden">
+    <section id="gallery" ref={ref} className="relative py-32 md:py-44 overflow-hidden">
       <div className="absolute inset-0 canyon-texture opacity-30" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-8 md:px-20">
         {/* Header */}
-        <div className="text-center mb-14 md:mb-20">
-          <span className="gal-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
+        <div className="text-center mb-16 md:mb-24">
+          <span className="gal-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
             Gallery
           </span>
-          <h2 className="gal-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-4">
+          <h2 className="gal-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-5">
             Life on the{" "}
             <span className="italic text-sandstone">Colorado</span>
           </h2>
-          <p className="gal-heading text-cool-white/40 text-[15px] font-light max-w-lg mx-auto leading-relaxed">
+          <p className="gal-heading text-cool-white/40 text-base font-light max-w-lg mx-auto leading-relaxed">
             Real photos from real trips. This is what&apos;s waiting for you
-            downriver.
+            at Lees Ferry.
           </p>
         </div>
 
         {/* Photo grid */}
-        <div className="gal-grid grid grid-cols-2 md:grid-cols-4 gap-2 auto-rows-[200px] md:auto-rows-[240px]">
+        <div className="gal-grid grid grid-cols-2 md:grid-cols-4 gap-2 auto-rows-[200px] md:auto-rows-[260px]">
           {photos.map((photo) => (
             <motion.div
               key={photo.src}
@@ -142,7 +149,7 @@ export default function Gallery() {
                 alt={photo.alt}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-[1.2s] ease-out"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
 
               {/* Dark overlay on hover */}
