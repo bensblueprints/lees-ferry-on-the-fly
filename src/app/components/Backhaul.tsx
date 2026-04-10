@@ -59,17 +59,21 @@ export default function Backhaul() {
       <div className="absolute inset-0 canyon-texture opacity-50" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-river-teal/[0.04] blur-[150px]" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-10">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
+        {/* Section label centered */}
+        <div className="text-center mb-16 md:mb-20">
+          <span className="bh-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
+            The Experience
+          </span>
+          <h2 className="bh-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
+            What&apos;s a{" "}
+            <span className="italic text-sandstone">Backhaul?</span>
+          </h2>
+        </div>
+
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20 md:mb-28">
           <div>
-            <span className="bh-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
-              The Experience
-            </span>
-            <h2 className="bh-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-6">
-              What&apos;s a{" "}
-              <span className="italic text-sandstone">Backhaul?</span>
-            </h2>
             <p className="bh-heading text-cool-white/50 text-[15px] md:text-base font-light leading-relaxed mb-8 max-w-lg">
               A backhaul is your ticket to the ultimate Colorado River adventure.
               Our jet boat takes you and your kayak or paddleboard{" "}

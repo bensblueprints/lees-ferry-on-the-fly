@@ -72,7 +72,7 @@ export default function BookingCTA() {
       </div>
       <div className="absolute inset-0 canyon-texture opacity-40" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-10">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24">
           <span className="book-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">

@@ -112,26 +112,24 @@ export default function Gallery() {
     <section id="gallery" ref={ref} className="relative py-28 md:py-40 overflow-hidden">
       <div className="absolute inset-0 canyon-texture opacity-30" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-10">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 md:mb-20 gap-4">
-          <div>
-            <span className="gal-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
-              Gallery
-            </span>
-            <h2 className="gal-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
-              Life on the{" "}
-              <span className="italic text-sandstone">Colorado</span>
-            </h2>
-          </div>
-          <p className="gal-heading text-cool-white/40 text-[14px] font-light max-w-xs leading-relaxed">
+        <div className="text-center mb-14 md:mb-20">
+          <span className="gal-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
+            Gallery
+          </span>
+          <h2 className="gal-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-4">
+            Life on the{" "}
+            <span className="italic text-sandstone">Colorado</span>
+          </h2>
+          <p className="gal-heading text-cool-white/40 text-[15px] font-light max-w-lg mx-auto leading-relaxed">
             Real photos from real trips. This is what&apos;s waiting for you
             downriver.
           </p>
         </div>
 
         {/* Photo grid */}
-        <div className="gal-grid grid grid-cols-1 md:grid-cols-4 gap-1.5 auto-rows-[220px]">
+        <div className="gal-grid grid grid-cols-2 md:grid-cols-4 gap-2 auto-rows-[200px] md:auto-rows-[240px]">
           {photos.map((photo) => (
             <motion.div
               key={photo.src}

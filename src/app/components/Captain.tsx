@@ -46,7 +46,7 @@ export default function Captain() {
       <div className="absolute inset-0 canyon-texture opacity-40" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[400px] rounded-full bg-sandstone/[0.03] blur-[180px]" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-10">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <div>
