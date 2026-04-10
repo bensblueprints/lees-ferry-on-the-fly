@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  --color-midnight: #0a0f0d;
+  --color-deep-forest: #121a16;
+  --color-river-dark: #0d1b2a;
+  --color-slate-blue: #1b2d45;
+  --color-copper: #b87333;
+  --color-gold: #c8a44e;
+  --color-warm-gold: #d4a843;
+  --color-pale-gold: #e8d5a3;
+  --color-sage: #4a6741;
+  --color-moss: #2d4a2d;
+  --color-sandstone: #c2a878;
+  --color-cream: #f5f0e8;
+  --color-mist: #b8c5b9;
+  --color-stone: #8a8a7a;
+  --color-charcoal: #2a2a28;
+}
+
+@theme inline {
+  --color-midnight: var(--color-midnight);
+  --color-deep-forest: var(--color-deep-forest);
+  --color-river-dark: var(--color-river-dark);
+  --color-slate-blue: var(--color-slate-blue);
+  --color-copper: var(--color-copper);
+  --color-gold: var(--color-gold);
+  --color-warm-gold: var(--color-warm-gold);
+  --color-pale-gold: var(--color-pale-gold);
+  --color-sage: var(--color-sage);
+  --color-moss: var(--color-moss);
+  --color-sandstone: var(--color-sandstone);
+  --color-cream: var(--color-cream);
+  --color-mist: var(--color-mist);
+  --color-stone: var(--color-stone);
+  --color-charcoal: var(--color-charcoal);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-raleway);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-midnight);
+}
+
+body {
+  background: var(--color-midnight);
+  color: var(--color-cream);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-copper);
+  color: var(--color-midnight);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-midnight);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-copper);
+  border-radius: 3px;
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Horizontal rule with copper gradient */
+.copper-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-copper), transparent);
+  border: none;
+  width: 100%;
+}
+
+/* Section transitions */
+.section-fade {
+  position: relative;
+}
+
+.section-fade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--color-midnight), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Water shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.water-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(200, 164, 78, 0.08) 25%,
+    rgba(184, 115, 51, 0.12) 50%,
+    rgba(200, 164, 78, 0.08) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+/* Glowing text */
+.text-glow {
+  text-shadow: 0 0 40px rgba(200, 164, 78, 0.15);
+}
+
+/* Hero background pattern */
+.hero-pattern {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(13, 27, 42, 0.6), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(74, 103, 65, 0.15), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 80%, rgba(184, 115, 51, 0.08), transparent);
+}
+
+/* Topographic pattern overlay */
+.topo-lines {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q15 20 30 30 T60 30' fill='none' stroke='rgba(200,164,78,0.04)' stroke-width='0.5'/%3E%3Cpath d='M0 15 Q15 5 30 15 T60 15' fill='none' stroke='rgba(200,164,78,0.03)' stroke-width='0.5'/%3E%3Cpath d='M0 45 Q15 35 30 45 T60 45' fill='none' stroke='rgba(200,164,78,0.03)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
