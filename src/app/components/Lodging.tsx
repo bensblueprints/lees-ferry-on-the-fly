@@ -44,7 +44,7 @@ export default function Lodging() {
     <section id="lodging" ref={ref} className="relative py-32 md:py-44 overflow-hidden">
       <div className="absolute inset-0 canyon-texture opacity-30" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-8 md:px-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-20 md:mb-28">
           <span className="lodge-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">

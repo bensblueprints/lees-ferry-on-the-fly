@@ -80,7 +80,7 @@ export default function Hero() {
       <div className="absolute inset-0 shadow-[inset_0_0_200px_60px_rgba(11,22,34,0.4)]" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-8 md:px-20 w-full text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 w-full text-center">
         {/* Logo mark */}
         <div className="hero-logo mb-10 flex justify-center">
           <Image

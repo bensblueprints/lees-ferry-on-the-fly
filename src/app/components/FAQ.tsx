@@ -89,7 +89,7 @@ export default function FAQ() {
     <section id="faq" ref={ref} className="relative py-32 md:py-44 warm-section overflow-hidden">
       <div className="absolute inset-0 canyon-texture opacity-30" />
 
-      <div className="relative z-10 max-w-[900px] mx-auto px-8 md:px-20">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24">
           <span className="faq-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">

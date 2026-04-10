@@ -59,7 +59,7 @@ export default function Backhaul() {
       <div className="absolute inset-0 canyon-texture opacity-50" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-river-teal/[0.04] blur-[150px]" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-8 md:px-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Section label centered */}
         <div className="text-center mb-20 md:mb-24">
           <span className="bh-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
