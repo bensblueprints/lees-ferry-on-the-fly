@@ -4,145 +4,156 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const lineRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      const tl = gsap.timeline({
+        defaults: { ease: "power4.out" },
+        delay: 0.3,
+      });
 
       tl.fromTo(
-        ".hero-line",
-        { y: 120, opacity: 0, skewY: 4 },
-        { y: 0, opacity: 1, skewY: 0, duration: 1.2, stagger: 0.15 }
+        ".hero-logo",
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 1 }
       )
         .fromTo(
-          ".hero-subtitle",
-          { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1 },
+          ".hero-line",
+          { y: 100, opacity: 0, skewY: 3 },
+          { y: 0, opacity: 1, skewY: 0, duration: 1.1, stagger: 0.12 },
           "-=0.5"
         )
         .fromTo(
-          ".hero-cta",
+          ".hero-sub",
           { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.8 },
           "-=0.4"
         )
         .fromTo(
-          lineRef.current,
-          { scaleX: 0 },
-          { scaleX: 1, duration: 1.5, ease: "power2.inOut" },
-          "-=0.8"
+          ".hero-cta",
+          { y: 25, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 },
+          "-=0.3"
         )
         .fromTo(
-          ".hero-detail",
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 },
-          "-=0.6"
+          ".hero-stat",
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, stagger: 0.08 },
+          "-=0.2"
         );
     },
     { scope: containerRef }
   );
 
   return (
-    <section
-      ref={containerRef}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden hero-pattern"
-    >
-      {/* Ambient gradients */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-copper/[0.03] blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] rounded-full bg-sage/[0.05] blur-[100px]" />
-        <div className="absolute top-0 left-0 right-0 bottom-0 topo-lines opacity-60" />
+    <section ref={containerRef} className="relative h-screen min-h-[700px] flex flex-col justify-end overflow-hidden">
+      {/* Video / Image Background */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/colorado-river-vista.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/images/river-adventure.mp4" type="video/mp4" />
+        </video>
+        {/* Fallback image for when video doesn't load */}
+        <Image
+          src="/images/colorado-river-vista.jpg"
+          alt="Colorado River at Lees Ferry"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
       </div>
 
-      {/* Decorative vertical line */}
-      <div className="absolute left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-copper/20 to-transparent hidden xl:block" />
+      {/* Overlay */}
+      <div className="absolute inset-0 hero-gradient" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 pt-32 pb-24 w-full">
-        {/* Eyebrow */}
-        <div className="hero-line overflow-hidden mb-8">
-          <span className="inline-block text-[11px] md:text-[13px] tracking-[0.5em] uppercase text-copper font-light">
-            Colorado River &nbsp;·&nbsp; Glen Canyon Dam &nbsp;·&nbsp; Arizona
-          </span>
+      {/* Vignette edges */}
+      <div className="absolute inset-0 shadow-[inset_0_0_200px_60px_rgba(11,22,34,0.4)]" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-10 pb-16 md:pb-20 w-full">
+        {/* Logo mark */}
+        <div className="hero-logo mb-6">
+          <Image
+            src="/images/logo.png"
+            alt="Lees Ferry On The Fly"
+            width={120}
+            height={120}
+            className="w-20 h-20 md:w-[100px] md:h-[100px] object-contain drop-shadow-2xl"
+          />
         </div>
 
-        {/* Main title */}
-        <h1
-          ref={titleRef}
-          className="font-serif leading-[0.9] mb-8"
-        >
-          <span className="hero-line block text-[clamp(3rem,10vw,9rem)] text-cream text-glow">
-            Lees Ferry
+        {/* Title */}
+        <h1 className="font-serif leading-[0.92] mb-5">
+          <span className="hero-line block text-[clamp(2.5rem,8vw,7rem)] text-cool-white text-glow-blue">
+            Horseshoe Bend
           </span>
-          <span className="hero-line block text-[clamp(2rem,6vw,5.5rem)] text-copper italic font-light mt-2">
-            On The Fly
+          <span className="hero-line block text-[clamp(1.5rem,4.5vw,3.8rem)] text-sandstone italic font-light mt-1">
+            By Jet Boat
           </span>
         </h1>
 
-        {/* Copper line */}
-        <div
-          ref={lineRef}
-          className="origin-left w-full max-w-[400px] h-px bg-gradient-to-r from-copper via-warm-gold to-transparent mb-10"
-        />
-
         {/* Subtitle */}
-        <p className="hero-subtitle text-lg md:text-xl text-mist/80 max-w-xl font-light leading-relaxed mb-10">
-          World-class fly fishing on the legendary Colorado River.
-          <br className="hidden md:block" />
-          Trophy rainbow trout. Expert guides. Unforgettable water.
+        <p className="hero-sub text-cool-white/70 text-base md:text-lg font-light max-w-lg leading-relaxed mb-8">
+          The only jet boat shuttle on the Colorado River. We take you upriver
+          through towering canyon walls — you paddle back through paradise.
         </p>
 
         {/* CTAs */}
-        <div className="hero-cta flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-3 mb-14">
           <a
             href="#booking"
-            className="inline-flex items-center justify-center px-10 py-4 bg-copper text-midnight text-[13px] tracking-[0.25em] uppercase font-medium hover:bg-warm-gold transition-all duration-500 hover:tracking-[0.35em]"
+            className="hero-cta inline-flex items-center justify-center px-9 py-4 bg-sandstone text-canyon-deep text-[12px] tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400 hover:tracking-[0.3em]"
           >
-            Book Your Trip
+            Book Your Shuttle
           </a>
           <a
-            href="#about"
-            className="inline-flex items-center justify-center px-10 py-4 border border-cream/20 text-cream text-[13px] tracking-[0.25em] uppercase font-light hover:border-copper/50 hover:text-copper transition-all duration-500"
+            href="tel:+19283804504"
+            className="hero-cta inline-flex items-center justify-center gap-2 px-9 py-4 border border-cool-white/20 text-cool-white text-[12px] tracking-[0.2em] uppercase font-light hover:border-sandstone/50 hover:text-sandstone transition-all duration-400"
           >
-            The Experience
+            <Phone size={14} />
+            (928) 380-4504
           </a>
         </div>
 
-        {/* Bottom details */}
-        <div className="mt-20 flex flex-wrap gap-12 md:gap-20">
+        {/* Stats bar */}
+        <div className="flex flex-wrap gap-x-12 gap-y-4">
           {[
-            { label: "Est.", value: "Lees Ferry, AZ" },
-            { label: "Species", value: "Rainbow Trout" },
-            { label: "River", value: "Colorado" },
-          ].map((item) => (
-            <div key={item.label} className="hero-detail">
-              <span className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-1">
-                {item.label}
+            { label: "Service", value: "Kayak & SUP Shuttles" },
+            { label: "Location", value: "Lees Ferry, AZ" },
+            { label: "Highlight", value: "Horseshoe Bend" },
+          ].map((s) => (
+            <div key={s.label} className="hero-stat">
+              <span className="block text-[9px] tracking-[0.4em] uppercase text-sandstone/70 mb-0.5">
+                {s.label}
               </span>
-              <span className="block text-sm text-cream/70 font-light">
-                {item.value}
+              <span className="text-cool-white/60 text-[13px] font-light">
+                {s.value}
               </span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll hint */}
       <motion.div
-        animate={{ y: [0, 12, 0] }}
+        animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10"
       >
-        <ChevronDown className="text-copper/50" size={28} />
+        <ChevronDown className="text-sandstone/40" size={26} />
       </motion.div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-midnight to-transparent pointer-events-none" />
     </section>
   );
 }

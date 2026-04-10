@@ -1,39 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --color-midnight: #0a0f0d;
-  --color-deep-forest: #121a16;
-  --color-river-dark: #0d1b2a;
-  --color-slate-blue: #1b2d45;
-  --color-copper: #b87333;
-  --color-gold: #c8a44e;
-  --color-warm-gold: #d4a843;
-  --color-pale-gold: #e8d5a3;
-  --color-sage: #4a6741;
-  --color-moss: #2d4a2d;
-  --color-sandstone: #c2a878;
-  --color-cream: #f5f0e8;
-  --color-mist: #b8c5b9;
-  --color-stone: #8a8a7a;
-  --color-charcoal: #2a2a28;
+  --canyon-deep: #0b1622;
+  --canyon-night: #0f1d2e;
+  --river-blue: #1a3a5c;
+  --river-teal: #1d6a7a;
+  --water-light: #3d9bb5;
+  --sandstone: #c2703a;
+  --sandstone-light: #d4874f;
+  --canyon-orange: #e8943d;
+  --sunset-gold: #f0b254;
+  --warm-cream: #f5ebe0;
+  --cool-white: #edf2f7;
+  --dust: #a89278;
+  --rock-gray: #6b5e52;
+  --petroglyph: #3d3429;
 }
 
 @theme inline {
-  --color-midnight: var(--color-midnight);
-  --color-deep-forest: var(--color-deep-forest);
-  --color-river-dark: var(--color-river-dark);
-  --color-slate-blue: var(--color-slate-blue);
-  --color-copper: var(--color-copper);
-  --color-gold: var(--color-gold);
-  --color-warm-gold: var(--color-warm-gold);
-  --color-pale-gold: var(--color-pale-gold);
-  --color-sage: var(--color-sage);
-  --color-moss: var(--color-moss);
-  --color-sandstone: var(--color-sandstone);
-  --color-cream: var(--color-cream);
-  --color-mist: var(--color-mist);
-  --color-stone: var(--color-stone);
-  --color-charcoal: var(--color-charcoal);
+  --color-canyon-deep: var(--canyon-deep);
+  --color-canyon-night: var(--canyon-night);
+  --color-river-blue: var(--river-blue);
+  --color-river-teal: var(--river-teal);
+  --color-water-light: var(--water-light);
+  --color-sandstone: var(--sandstone);
+  --color-sandstone-light: var(--sandstone-light);
+  --color-canyon-orange: var(--canyon-orange);
+  --color-sunset-gold: var(--sunset-gold);
+  --color-warm-cream: var(--warm-cream);
+  --color-cool-white: var(--cool-white);
+  --color-dust: var(--dust);
+  --color-rock-gray: var(--rock-gray);
+  --color-petroglyph: var(--petroglyph);
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-raleway);
 }
@@ -46,106 +44,123 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--color-midnight);
+  background: var(--canyon-deep);
 }
 
 body {
-  background: var(--color-midnight);
-  color: var(--color-cream);
+  background: var(--canyon-deep);
+  color: var(--cool-white);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: var(--color-copper);
-  color: var(--color-midnight);
+  background: var(--sandstone);
+  color: var(--canyon-deep);
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-midnight);
+  background: var(--canyon-deep);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-copper);
+  background: var(--sandstone);
   border-radius: 3px;
 }
 
 /* Grain overlay */
-.grain-overlay {
+.grain {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Horizontal rule with copper gradient */
-.copper-divider {
+/* Cinematic bars */
+.cinema-bar {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-copper), transparent);
-  border: none;
-  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--sandstone), transparent);
 }
 
-/* Section transitions */
-.section-fade {
-  position: relative;
-}
-
-.section-fade::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, var(--color-midnight), transparent);
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Water shimmer effect */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+/* Water ripple shimmer */
+@keyframes water-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .water-shimmer {
-  background: linear-gradient(
-    90deg,
+  background: linear-gradient(90deg,
     transparent 0%,
-    rgba(200, 164, 78, 0.08) 25%,
-    rgba(184, 115, 51, 0.12) 50%,
-    rgba(200, 164, 78, 0.08) 75%,
+    rgba(61, 155, 181, 0.06) 20%,
+    rgba(29, 106, 122, 0.1) 50%,
+    rgba(61, 155, 181, 0.06) 80%,
     transparent 100%
   );
   background-size: 200% 100%;
-  animation: shimmer 8s ease-in-out infinite;
+  animation: water-flow 10s ease-in-out infinite;
 }
 
-/* Glowing text */
-.text-glow {
-  text-shadow: 0 0 40px rgba(200, 164, 78, 0.15);
+/* Canyon texture overlay */
+.canyon-texture {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 Q20 30 40 40 T80 40' fill='none' stroke='rgba(194,112,58,0.03)' stroke-width='0.5'/%3E%3Cpath d='M0 20 Q20 10 40 20 T80 20' fill='none' stroke='rgba(194,112,58,0.02)' stroke-width='0.5'/%3E%3Cpath d='M0 60 Q20 50 40 60 T80 60' fill='none' stroke='rgba(194,112,58,0.02)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
 }
 
-/* Hero background pattern */
-.hero-pattern {
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(13, 27, 42, 0.6), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(74, 103, 65, 0.15), transparent),
-    radial-gradient(ellipse 50% 30% at 20% 80%, rgba(184, 115, 51, 0.08), transparent);
+/* Glow text */
+.text-glow-blue {
+  text-shadow: 0 0 60px rgba(61, 155, 181, 0.15);
 }
 
-/* Topographic pattern overlay */
-.topo-lines {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q15 20 30 30 T60 30' fill='none' stroke='rgba(200,164,78,0.04)' stroke-width='0.5'/%3E%3Cpath d='M0 15 Q15 5 30 15 T60 15' fill='none' stroke='rgba(200,164,78,0.03)' stroke-width='0.5'/%3E%3Cpath d='M0 45 Q15 35 30 45 T60 45' fill='none' stroke='rgba(200,164,78,0.03)' stroke-width='0.5'/%3E%3C/svg%3E");
-  background-size: 60px 60px;
+.text-glow-orange {
+  text-shadow: 0 0 60px rgba(232, 148, 61, 0.2);
+}
+
+/* Phone link */
+.phone-glow {
+  text-shadow: 0 0 20px rgba(232, 148, 61, 0.3);
+}
+
+/* Video hero overlay gradient */
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 22, 34, 0.3) 0%,
+    rgba(11, 22, 34, 0.1) 30%,
+    rgba(11, 22, 34, 0.2) 60%,
+    rgba(11, 22, 34, 0.85) 90%,
+    rgba(11, 22, 34, 1) 100%
+  );
+}
+
+/* Section warm shift */
+.warm-section {
+  background: linear-gradient(
+    180deg,
+    var(--canyon-deep) 0%,
+    #12202e 30%,
+    #1a2433 60%,
+    var(--canyon-deep) 100%
+  );
+}
+
+/* FAQ accordion */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-answer.open {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer > div {
+  overflow: hidden;
 }

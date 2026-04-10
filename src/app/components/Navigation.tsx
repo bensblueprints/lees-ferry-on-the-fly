@@ -2,14 +2,15 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
-  { label: "Experience", href: "#about" },
-  { label: "Guided Trips", href: "#trips" },
+  { label: "The Experience", href: "#backhaul" },
+  { label: "Services", href: "#services" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Book Now", href: "#booking" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Navigation() {
@@ -17,23 +18,18 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
   }, [mobileOpen]);
 
-  const handleClick = (href: string) => {
+  const nav = (href: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -42,83 +38,126 @@ export default function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-midnight/90 backdrop-blur-xl border-b border-copper/10"
+            ? "bg-canyon-deep/95 backdrop-blur-xl border-b border-sandstone/10 shadow-2xl shadow-black/20"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+        <div className="max-w-[1440px] mx-auto px-5 md:px-10 flex items-center justify-between h-[72px]">
+          {/* Logo */}
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="relative z-10"
+            className="relative z-10 flex items-center gap-3"
           >
-            <span className="font-serif text-xl md:text-2xl tracking-wide text-cream">
-              Lees Ferry
-            </span>
-            <span className="block text-[10px] md:text-xs tracking-[0.35em] uppercase text-copper font-light">
-              On The Fly
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="Lees Ferry On The Fly"
+              width={48}
+              height={48}
+              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+            />
+            <div className="hidden sm:block">
+              <span className="font-serif text-lg text-cool-white leading-none block">
+                Lees Ferry
+              </span>
+              <span className="text-[9px] tracking-[0.4em] uppercase text-sandstone font-light">
+                On The Fly
+              </span>
+            </div>
           </a>
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
+          {/* Desktop links */}
+          <div className="hidden xl:flex items-center gap-8">
+            {navLinks.map((l) => (
               <button
-                key={link.href}
-                onClick={() => handleClick(link.href)}
-                className={`text-[13px] tracking-[0.2em] uppercase transition-colors duration-300 ${
-                  link.label === "Book Now"
-                    ? "text-midnight bg-copper hover:bg-warm-gold px-6 py-2.5 font-medium"
-                    : "text-mist hover:text-copper font-light"
-                }`}
+                key={l.href}
+                onClick={() => nav(l.href)}
+                className="text-[12px] tracking-[0.18em] uppercase text-cool-white/60 hover:text-sandstone transition-colors duration-300 font-light"
               >
-                {link.label}
+                {l.label}
               </button>
             ))}
+          </div>
+
+          {/* Desktop CTA */}
+          <div className="hidden xl:flex items-center gap-5">
+            <a
+              href="tel:+19283804504"
+              className="flex items-center gap-2 text-sandstone text-[13px] font-light hover:text-sunset-gold transition-colors"
+            >
+              <Phone size={14} strokeWidth={1.5} />
+              (928) 380-4504
+            </a>
+            <a
+              href="#booking"
+              onClick={(e) => {
+                e.preventDefault();
+                nav("#booking");
+              }}
+              className="px-7 py-2.5 bg-sandstone text-canyon-deep text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400"
+            >
+              Book Now
+            </a>
           </div>
 
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden relative z-10 text-cream"
+            className="xl:hidden relative z-10 text-cool-white"
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </motion.nav>
 
-      {/* Mobile menu */}
+      {/* Mobile overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-40 bg-midnight/98 backdrop-blur-2xl flex flex-col items-center justify-center gap-8"
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 z-40 bg-canyon-deep/[0.98] backdrop-blur-2xl flex flex-col items-center justify-center gap-6"
           >
-            {navLinks.map((link, i) => (
+            {navLinks.map((l, i) => (
               <motion.button
-                key={link.href}
-                initial={{ opacity: 0, y: 30 }}
+                key={l.href}
+                initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ delay: i * 0.08, duration: 0.4 }}
-                onClick={() => handleClick(link.href)}
-                className={`text-2xl tracking-[0.15em] uppercase ${
-                  link.label === "Book Now"
-                    ? "text-copper font-serif text-3xl"
-                    : "text-cream/80 hover:text-copper font-light"
-                }`}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ delay: i * 0.06, duration: 0.35 }}
+                onClick={() => nav(l.href)}
+                className="text-xl tracking-[0.12em] uppercase text-cool-white/70 hover:text-sandstone font-light"
               >
-                {link.label}
+                {l.label}
               </motion.button>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.35 }}
+              className="mt-6 flex flex-col items-center gap-4"
+            >
+              <a
+                href="tel:+19283804504"
+                className="text-sandstone text-lg font-light flex items-center gap-2"
+              >
+                <Phone size={18} />
+                (928) 380-4504
+              </a>
+              <button
+                onClick={() => nav("#booking")}
+                className="px-10 py-3.5 bg-sandstone text-canyon-deep text-[12px] tracking-[0.25em] uppercase font-semibold"
+              >
+                Book Now
+              </button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

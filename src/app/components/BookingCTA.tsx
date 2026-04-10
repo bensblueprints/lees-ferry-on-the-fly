@@ -4,17 +4,18 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Send, Clock } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BookingCTA() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [formState, setFormState] = useState({
+  const ref = useRef<HTMLDivElement>(null);
+  const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    trip: "",
+    service: "",
     date: "",
     guests: "",
     message: "",
@@ -23,19 +24,18 @@ export default function BookingCTA() {
   useGSAP(
     () => {
       gsap.fromTo(
-        ".booking-heading",
-        { y: 80, opacity: 0 },
+        ".book-heading",
+        { y: 70, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 1,
           ease: "power3.out",
-          scrollTrigger: { trigger: ".booking-heading", start: "top 85%" },
+          scrollTrigger: { trigger: ".book-heading", start: "top 85%" },
         }
       );
-
       gsap.fromTo(
-        ".booking-content",
+        ".book-content",
         { y: 50, opacity: 0 },
         {
           y: 0,
@@ -43,246 +43,172 @@ export default function BookingCTA() {
           duration: 0.8,
           stagger: 0.1,
           ease: "power3.out",
-          scrollTrigger: { trigger: ".booking-content", start: "top 85%" },
+          scrollTrigger: { trigger: ".book-content", start: "top 85%" },
         }
       );
     },
-    { scope: sectionRef }
+    { scope: ref }
   );
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const onChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
+
+  const inputClass =
+    "w-full bg-transparent border-b border-cool-white/10 focus:border-sandstone/60 text-cool-white text-[14px] font-light pb-3 outline-none transition-colors duration-300 placeholder:text-cool-white/15";
 
   return (
-    <section
-      id="booking"
-      ref={sectionRef}
-      className="relative py-32 md:py-44 overflow-hidden"
-    >
-      {/* Background */}
+    <section id="booking" ref={ref} className="relative py-28 md:py-40 overflow-hidden">
+      {/* Background image accent */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight via-river-dark/30 to-midnight" />
-        <div className="absolute inset-0 topo-lines opacity-30" />
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] rounded-full bg-copper/[0.03] blur-[150px]" />
+        <Image
+          src="/images/horseshoe-bend.webp"
+          alt=""
+          fill
+          className="object-cover opacity-[0.04]"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-canyon-deep/95" />
       </div>
+      <div className="absolute inset-0 canyon-texture opacity-40" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-10">
         {/* Header */}
-        <div className="text-center mb-20 md:mb-28">
-          <span className="booking-heading block text-[11px] tracking-[0.5em] uppercase text-copper mb-6">
-            Book Your Trip
+        <div className="text-center mb-16 md:mb-24">
+          <span className="book-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-5">
+            Book Your Adventure
           </span>
-          <h2 className="booking-heading font-serif text-4xl md:text-6xl lg:text-7xl text-cream leading-[1.05] mb-6">
-            Start Your
-            <br />
-            <span className="italic text-copper">River Story</span>
+          <h2 className="book-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-5">
+            Ready to Hit the{" "}
+            <span className="italic text-sandstone">Water?</span>
           </h2>
-          <p className="booking-heading text-mist/60 text-lg font-light max-w-xl mx-auto">
-            Ready to experience Lees Ferry? Fill out the form below and
-            we&apos;ll get you on the water.
+          <p className="book-heading text-cool-white/45 text-base font-light max-w-xl mx-auto">
+            Fill out the form or give Dave a call — he&apos;ll get you on the
+            river.
           </p>
         </div>
 
+        {/* Big phone CTA */}
+        <div className="book-content text-center mb-16">
+          <a
+            href="tel:+19283804504"
+            className="inline-flex items-center gap-4 group"
+          >
+            <div className="w-16 h-16 rounded-full border-2 border-sandstone/40 flex items-center justify-center group-hover:border-sandstone group-hover:bg-sandstone/10 transition-all duration-400">
+              <Phone className="text-sandstone" size={24} strokeWidth={1.5} />
+            </div>
+            <div className="text-left">
+              <span className="block text-[10px] tracking-[0.3em] uppercase text-cool-white/30">
+                Call or text Dave directly
+              </span>
+              <span className="font-serif text-3xl md:text-4xl text-sandstone phone-glow group-hover:text-canyon-orange transition-colors">
+                (928) 380-4504
+              </span>
+            </div>
+          </a>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-1">
-          {/* Contact info */}
-          <div className="booking-content lg:col-span-2 bg-cream/[0.02] border border-cream/[0.05] p-8 md:p-12 flex flex-col justify-between">
+          {/* Contact info sidebar */}
+          <div className="book-content lg:col-span-2 bg-cool-white/[0.02] border border-cool-white/[0.04] p-7 md:p-10 flex flex-col justify-between">
             <div>
-              <h3 className="font-serif text-2xl text-cream mb-8">
-                Get in Touch
+              <h3 className="font-serif text-2xl text-cool-white mb-8">
+                Contact Info
               </h3>
-              <div className="space-y-8">
-                <a
-                  href="tel:+19285551234"
-                  className="flex items-start gap-4 group"
-                >
-                  <Phone
-                    className="text-copper mt-1 group-hover:scale-110 transition-transform"
-                    size={18}
-                    strokeWidth={1.5}
-                  />
+              <div className="space-y-7">
+                <a href="tel:+19283804504" className="flex items-start gap-4 group">
+                  <Phone className="text-sandstone mt-0.5 group-hover:scale-110 transition-transform" size={17} strokeWidth={1.5} />
                   <div>
-                    <span className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-1">
-                      Phone
-                    </span>
-                    <span className="text-cream/80 font-light group-hover:text-copper transition-colors">
-                      (928) 555-1234
-                    </span>
+                    <span className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-1">Phone</span>
+                    <span className="text-cool-white/70 font-light group-hover:text-sandstone transition-colors">(928) 380-4504</span>
                   </div>
                 </a>
-
-                <a
-                  href="mailto:fish@leesferryonthefly.com"
-                  className="flex items-start gap-4 group"
-                >
-                  <Mail
-                    className="text-copper mt-1 group-hover:scale-110 transition-transform"
-                    size={18}
-                    strokeWidth={1.5}
-                  />
+                <a href="mailto:dave@leesferryonthefly.com" className="flex items-start gap-4 group">
+                  <Mail className="text-sandstone mt-0.5 group-hover:scale-110 transition-transform" size={17} strokeWidth={1.5} />
                   <div>
-                    <span className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-1">
-                      Email
-                    </span>
-                    <span className="text-cream/80 font-light group-hover:text-copper transition-colors">
-                      fish@leesferryonthefly.com
-                    </span>
+                    <span className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-1">Email</span>
+                    <span className="text-cool-white/70 font-light group-hover:text-sandstone transition-colors">dave@leesferryonthefly.com</span>
                   </div>
                 </a>
-
                 <div className="flex items-start gap-4">
-                  <MapPin
-                    className="text-copper mt-1"
-                    size={18}
-                    strokeWidth={1.5}
-                  />
+                  <MapPin className="text-sandstone mt-0.5" size={17} strokeWidth={1.5} />
                   <div>
-                    <span className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-1">
-                      Location
-                    </span>
-                    <span className="text-cream/80 font-light">
-                      Lees Ferry, Marble Canyon
-                      <br />
-                      Arizona 86036
-                    </span>
+                    <span className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-1">Location</span>
+                    <span className="text-cool-white/70 font-light">Lees Ferry Boat Launch<br />Marble Canyon, AZ 86036</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Clock className="text-sandstone mt-0.5" size={17} strokeWidth={1.5} />
+                  <div>
+                    <span className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-1">Season</span>
+                    <span className="text-cool-white/70 font-light">Year-round operation<br />Peak: March — October</span>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-12 pt-8 border-t border-cream/[0.06]">
-              <span className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-3">
-                Season
-              </span>
-              <p className="text-cream/60 text-[14px] font-light leading-relaxed">
-                We fish year-round at Lees Ferry. Peak seasons are spring
-                (March-May) and fall (October-November), but every month offers
-                exceptional fishing.
-              </p>
             </div>
           </div>
 
           {/* Form */}
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="booking-content lg:col-span-3 bg-cream/[0.02] border border-cream/[0.05] p-8 md:p-12"
+            className="book-content lg:col-span-3 bg-cool-white/[0.02] border border-cool-white/[0.04] p-7 md:p-10"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-3">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formState.name}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border-b border-cream/10 focus:border-copper/60 text-cream text-[15px] font-light pb-3 outline-none transition-colors duration-300 placeholder:text-cream/15"
-                  placeholder="Your name"
-                />
+                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Full Name</label>
+                <input type="text" name="name" value={form.name} onChange={onChange} placeholder="Your name" className={inputClass} />
               </div>
               <div>
-                <label className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-3">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border-b border-cream/10 focus:border-copper/60 text-cream text-[15px] font-light pb-3 outline-none transition-colors duration-300 placeholder:text-cream/15"
-                  placeholder="you@email.com"
-                />
+                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Email</label>
+                <input type="email" name="email" value={form.email} onChange={onChange} placeholder="you@email.com" className={inputClass} />
               </div>
               <div>
-                <label className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-3">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formState.phone}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border-b border-cream/10 focus:border-copper/60 text-cream text-[15px] font-light pb-3 outline-none transition-colors duration-300 placeholder:text-cream/15"
-                  placeholder="(555) 000-0000"
-                />
+                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Phone</label>
+                <input type="tel" name="phone" value={form.phone} onChange={onChange} placeholder="(555) 000-0000" className={inputClass} />
               </div>
               <div>
-                <label className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-3">
-                  Trip Type
-                </label>
-                <select
-                  name="trip"
-                  value={formState.trip}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border-b border-cream/10 focus:border-copper/60 text-cream text-[15px] font-light pb-3 outline-none transition-colors duration-300 [&>option]:bg-midnight [&>option]:text-cream"
-                >
-                  <option value="">Select a trip</option>
-                  <option value="half-day">Half Day Wade Trip — $425</option>
-                  <option value="full-day">Full Day Float Trip — $575</option>
-                  <option value="multi-day">
-                    Multi-Day Expedition — From $1,100
-                  </option>
+                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Service</label>
+                <select name="service" value={form.service} onChange={onChange} className={`${inputClass} [&>option]:bg-canyon-deep [&>option]:text-cool-white`}>
+                  <option value="">Select a service</option>
+                  <option value="kayak-shuttle">Kayak Backhaul Shuttle</option>
+                  <option value="sup-shuttle">Paddleboard Shuttle</option>
+                  <option value="rental-kayak">Kayak Rental + Shuttle</option>
+                  <option value="rental-sup">SUP Rental + Shuttle</option>
+                  <option value="fishing">Guided Fishing Trip</option>
                 </select>
               </div>
               <div>
-                <label className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-3">
-                  Preferred Date
-                </label>
-                <input
-                  type="date"
-                  name="date"
-                  value={formState.date}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border-b border-cream/10 focus:border-copper/60 text-cream text-[15px] font-light pb-3 outline-none transition-colors duration-300 [color-scheme:dark]"
-                />
+                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Preferred Date</label>
+                <input type="date" name="date" value={form.date} onChange={onChange} className={`${inputClass} [color-scheme:dark]`} />
               </div>
               <div>
-                <label className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-3">
-                  Number of Guests
-                </label>
-                <select
-                  name="guests"
-                  value={formState.guests}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border-b border-cream/10 focus:border-copper/60 text-cream text-[15px] font-light pb-3 outline-none transition-colors duration-300 [&>option]:bg-midnight [&>option]:text-cream"
-                >
+                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Group Size</label>
+                <select name="guests" value={form.guests} onChange={onChange} className={`${inputClass} [&>option]:bg-canyon-deep [&>option]:text-cool-white`}>
                   <option value="">Select</option>
-                  <option value="1">1 Angler</option>
-                  <option value="2">2 Anglers</option>
-                  <option value="3">3 Anglers</option>
-                  <option value="4">4 Anglers</option>
+                  <option value="1">1 Person</option>
+                  <option value="2">2 People</option>
+                  <option value="3-4">3-4 People</option>
+                  <option value="5+">5+ People</option>
                 </select>
               </div>
             </div>
-
-            <div className="mb-10">
-              <label className="block text-[10px] tracking-[0.4em] uppercase text-stone mb-3">
-                Message
-              </label>
+            <div className="mb-8">
+              <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Message</label>
               <textarea
                 name="message"
-                value={formState.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full bg-transparent border-b border-cream/10 focus:border-copper/60 text-cream text-[15px] font-light pb-3 outline-none transition-colors duration-300 resize-none placeholder:text-cream/15"
-                placeholder="Tell us about your experience level, any special requests..."
+                value={form.message}
+                onChange={onChange}
+                rows={3}
+                placeholder="Tell us about your group, experience level, any questions..."
+                className={`${inputClass} resize-none`}
               />
             </div>
-
             <button
               type="submit"
-              className="w-full md:w-auto flex items-center justify-center gap-3 px-12 py-4 bg-copper text-midnight text-[12px] tracking-[0.25em] uppercase font-medium hover:bg-warm-gold transition-all duration-500 hover:tracking-[0.35em] group"
+              className="w-full md:w-auto flex items-center justify-center gap-3 px-12 py-4 bg-sandstone text-canyon-deep text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400 hover:tracking-[0.3em] group"
             >
               Send Inquiry
-              <Send
-                size={14}
-                className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-              />
+              <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </button>
           </form>
         </div>

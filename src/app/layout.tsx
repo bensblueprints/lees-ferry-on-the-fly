@@ -15,11 +15,12 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Lees Ferry On The Fly | Premium Fly Fishing Guides - Arizona",
+  title:
+    "Lees Ferry On The Fly | Kayak & Paddleboard Shuttles - Horseshoe Bend, AZ",
   description:
-    "Experience world-class fly fishing at Lees Ferry, Arizona. Expert guides, trophy rainbow trout, and the legendary Colorado River below Glen Canyon Dam.",
+    "Jet boat backhaul shuttles through Horseshoe Bend on the Colorado River. Kayak & paddleboard rentals, guided fishing. Book your adventure with Captain Dave Trimble.",
   keywords:
-    "Lees Ferry, fly fishing, Arizona, Colorado River, rainbow trout, fishing guide, Glen Canyon Dam",
+    "Horseshoe Bend, kayak shuttle, paddleboard, backhaul, Lees Ferry, Colorado River, jet boat, Arizona, Glen Canyon",
 };
 
 export default function RootLayout({
@@ -33,7 +34,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${raleway.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="grain-overlay" />
+        <div className="grain" />
         {children}
       </body>
     </html>
