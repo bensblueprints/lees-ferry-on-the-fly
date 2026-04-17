@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const faqs = [
   {
     q: "What are the 2025 guide rates?",
-    a: "Fly fishing for 1-2 anglers is $600. Spin fishing for up to 3 anglers is $700. Four anglers (spin fishing only) is $800. There's a $25 charge for any non-fishing passenger. Maximum 4 people per boat. We do NOT fly fish 3 or 4 anglers.",
+    a: "Fly fishing is $650 for 1 angler or $700 for 2 anglers. Spin fishing is $700 for 1-3 anglers or $800 for 4 anglers. There's a $25 charge for any non-fishing passenger. Maximum 4 people per boat. We do NOT fly fish 3 or 4 anglers.",
   },
   {
     q: "What's included in a guided fishing charter?",
@@ -22,12 +22,12 @@ const faqs = [
     a: "Bring snacks, drinks, and lunch. You'll also want a valid Arizona fishing license (purchasable online), polarized sunglasses, sunscreen, and 9-foot 5x leaders with 4x-5x fluorocarbon tippet. Waders and boots are available for rental locally at Marble Canyon Lodge.",
   },
   {
-    q: "What is a backhaul shuttle?",
-    a: "A backhaul is a jet boat ride upriver from Lees Ferry through the Horseshoe Bend corridor. We load your kayak, paddleboard, or rental gear on our boat, take you 10 miles upstream, and drop you off. Then you paddle 15 miles back downstream at your own pace — no fighting the current!",
+    q: "What is a backhaul / water taxi shuttle?",
+    a: "A backhaul is a jet boat ride that transports you and your kayak or paddleboard upstream from Lees Ferry to a destination of your choice. Most folks ride 10 miles up to Petroglyph Beach day-use area, just below Glen Canyon Dam (15 miles upstream is the max). You pick how long you want to paddle and we drop you off accordingly — two hours or all day, your call.",
   },
   {
     q: "How much does the backhaul shuttle cost?",
-    a: "The shuttle is $80 per person for day trips, which includes upstream transport for one person plus one watercraft under 50 lbs. Kayak rentals start at $40 plus tax and booking fee. There's an additional $80 charge for gear exceeding 50 lbs total.",
+    a: "The shuttle is $80 per person, which includes upstream transport for one person plus one watercraft under 50 lbs. Kayak rentals start at $40 plus tax and booking fee. There's an additional $80 charge for gear and watercraft exceeding 50 lbs total.",
   },
   {
     q: "Do I need my own kayak or paddleboard?",
@@ -39,7 +39,11 @@ const faqs = [
   },
   {
     q: "Where should I stay while visiting?",
-    a: "We highly recommend the Marble Canyon Lodge — it's located just minutes from the Lees Ferry boat launch. They have comfortable rooms, an on-site restaurant, and carry local fly patterns and lures. Call them at 1-800-726-1789 to book your room.",
+    a: "Our top pick is our friends at Vermilion Cliffs Lodge (vermilioncliffs.com). The Marble Canyon Lodge is another solid option just minutes from the Lees Ferry boat launch — comfortable rooms, on-site restaurant, and a shop that carries local fly patterns and lures. Call them at 1-800-726-1789. More options in Page, AZ coming soon.",
+  },
+  {
+    q: "How far is Lees Ferry from major cities?",
+    a: "Page, AZ: 45 mi via US-89 & US-89A N. Grand Canyon North Rim: 85 mi via Hwy 67 to Hwy 89A. Flagstaff: 124 mi via N 89 to US-89 N. Grand Canyon Village: 134 mi via Hwy 64 to 89 to 89A. Williams: 136 mi via I-40 to Hwy 89 to 89A. Sedona: 153 mi via Hwy 89A N to 89 N to 89A. Phoenix: 273 mi via I-17 to I-40 to Hwy 89 to 89A.",
   },
   {
     q: "What kind of fish will I catch?",

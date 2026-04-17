@@ -62,10 +62,10 @@ export default function Captain() {
             </div>
 
             <p className="cap-content text-cool-white/55 text-base font-light leading-relaxed mb-5">
-              Dave Trimble has been guiding anglers at Lees Ferry since the 1990s,
-              logging hundreds of guide days on this legendary stretch of the
-              Colorado River. He knows every bend, eddy, and hidden grotto along
-              the corridor.
+              Dave Trimble has been guiding Lees Ferry since 1999 &mdash; a
+              family owned and operated outfit with hundreds of guide days on
+              this legendary stretch of the Colorado River. He knows every
+              bend, eddy, and hidden grotto along the corridor.
             </p>
             <p className="cap-content text-cool-white/45 text-[15px] font-light leading-relaxed mb-6">
               As sole owner and operator, Dave personally captains every trip —
@@ -82,7 +82,7 @@ export default function Captain() {
             {/* Traits */}
             <div className="cap-content grid grid-cols-3 gap-6 mb-12">
               {[
-                { icon: Compass, label: "Local Expert", sublabel: "Since the 1990s" },
+                { icon: Compass, label: "Local Expert", sublabel: "Family-owned since 1999" },
                 { icon: Shield, label: "Safety First", sublabel: "USCG Licensed" },
                 { icon: Heart, label: "Passionate", sublabel: "Lives for the river" },
               ].map((t) => {
@@ -115,6 +115,11 @@ export default function Captain() {
           </div>
 
           {/* Image */}
+          {/*
+            TODO: Replace this image — current photo is NOT Dave Trimble.
+            Dave is sending a real photo. Drop it at
+            /public/images/original/dave-trimble-guide.jpg to swap.
+          */}
           <div className="cap-image relative">
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image

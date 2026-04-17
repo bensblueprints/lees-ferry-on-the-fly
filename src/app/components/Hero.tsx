@@ -104,9 +104,9 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="hero-sub text-cool-white/70 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed mb-12">
-          Guided fly fishing &amp; spin fishing on the Colorado River.
-          Jet boat kayak &amp; paddleboard shuttle through Horseshoe Bend.
-          Book your trip with Captain Dave Trimble.
+          Water taxi &amp; kayak rentals through Horseshoe Bend. Guided fly
+          fishing &amp; spin fishing on the Colorado River. Family owned and
+          operated &mdash; guiding Lees Ferry since 1999.
         </p>
 
         {/* CTAs */}
@@ -129,10 +129,10 @@ export default function Hero() {
         {/* Stats bar */}
         <div className="flex flex-wrap justify-center gap-x-16 gap-y-5">
           {[
-            { label: "Fly Fishing", value: "From $600" },
-            { label: "Backhaul Shuttle", value: "$80 / Person" },
-            { label: "Location", value: "Lees Ferry, AZ" },
-            { label: "Guide", value: "Dave Trimble" },
+            { label: "Water Taxi", value: "$80 / Person" },
+            { label: "Kayak Rentals", value: "From $40" },
+            { label: "Fly Fishing", value: "From $650" },
+            { label: "Guiding Since", value: "1999" },
           ].map((s) => (
             <div key={s.label} className="hero-stat">
               <span className="block text-[9px] tracking-[0.4em] uppercase text-sandstone/70 mb-1">

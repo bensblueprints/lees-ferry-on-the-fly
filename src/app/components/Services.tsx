@@ -11,13 +11,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
+    icon: Ship,
+    title: "Water Taxi / Backhaul Shuttle",
+    description:
+      "Our custom jet boat takes you and your kayak or paddleboard upstream to a destination of your choice — typically 10 miles up at Petroglyph Beach day-use area, just below Glen Canyon Dam. You decide how far you want to paddle and we drop you off accordingly.",
+    image: "/images/original/kayak-horseshoe.jpg",
+    price: "$80",
+    priceNote: "Per person",
+    tag: "Most Popular",
+    features: [
+      "Choose 2 hours or all day on the river",
+      "Drop-off up to 15 miles upstream",
+      "Kayak & SUP rentals from $40",
+      "Meet at Lees Ferry boat launch ramp",
+    ],
+  },
+  {
     icon: Fish,
     title: "Fly Fishing Guide Trip",
     description:
       "Experience world-class trout fishing in the gin-clear tailwaters below Glen Canyon Dam. Your guide Dave Trimble has logged hundreds of guide days since the 1990s on this legendary stretch of the Colorado River.",
     image: "/images/original/stephs-brown-trout.jpg",
-    price: "$600",
-    priceNote: "1-2 anglers",
+    price: "$650",
+    priceNote: "1 angler · $700 for 2",
     tag: "Guided Fishing",
     features: [
       "8 hours on the water",
@@ -33,29 +49,13 @@ const services = [
       "Perfect for groups up to 4 anglers. Target trophy rainbow and brown trout with expert guidance. All tackle, fuel, and custom Koffler jet boat included. We do NOT fly fish 3 or 4 anglers.",
     image: "/images/original/spring-fishing.jpg",
     price: "$700",
-    priceNote: "Up to 3 anglers",
+    priceNote: "1-3 anglers · $800 for 4",
     tag: null,
     features: [
       "4 anglers available at $800",
       "All tackle & lures included",
       "Custom Koffler jet boat",
       "$25 per non-fishing passenger",
-    ],
-  },
-  {
-    icon: Ship,
-    title: "Water Taxi / Backhaul Shuttle",
-    description:
-      "Our custom jet boat takes you and your kayak or paddleboard upriver from Lees Ferry through the stunning Horseshoe Bend corridor — then you paddle back downstream through 15 miles of towering red rock canyon walls.",
-    image: "/images/original/kayak-horseshoe.jpg",
-    price: "$80",
-    priceNote: "Per person",
-    tag: "Most Popular",
-    features: [
-      "10-mile upstream transport",
-      "Kayak & SUP rentals from $40",
-      "Flexible scheduling",
-      "All skill levels welcome",
     ],
   },
 ];
@@ -108,8 +108,9 @@ export default function Services() {
             <span className="italic text-sandstone">Rates</span>
           </h2>
           <p className="svc-heading text-cool-white/40 text-base font-light max-w-2xl mx-auto leading-relaxed">
-            Guided fishing trips and jet boat shuttle service on the Colorado
-            River at Lees Ferry. Maximum 4 people per boat.
+            Water taxi &amp; kayak rentals, plus guided fishing trips on the
+            Colorado River at Lees Ferry. Family owned and operated &mdash;
+            guiding Lees Ferry since 1999. Maximum 4 people per boat.
           </p>
         </div>
 

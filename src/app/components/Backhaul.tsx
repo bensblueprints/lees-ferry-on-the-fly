@@ -75,15 +75,34 @@ export default function Backhaul() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24 md:mb-32">
           <div>
             <p className="bh-heading text-cool-white/55 text-base md:text-lg font-light leading-relaxed mb-8 max-w-lg">
-              Kayak the scenic Horseshoe Bend with our jet boat backhaul shuttle
-              service and rentals. Our custom jet boat carries you and your kayak or
-              paddleboard{" "}
-              <strong className="text-water-light font-normal">10 miles upriver</strong>{" "}
-              from Lees Ferry through calm waters — then you float{" "}
-              <strong className="text-sandstone font-normal">15 miles downstream</strong>{" "}
-              through one of the most dramatic stretches of the Colorado River,
-              from Glen Canyon Dam to Grand Canyon National Park&apos;s entrance.
+              We transport you and your kayak or paddleboard{" "}
+              <strong className="text-water-light font-normal">upstream</strong>{" "}
+              to a destination of your choice &mdash; typically{" "}
+              <strong className="text-sandstone font-normal">10 miles up at Petroglyph Beach</strong>{" "}
+              day-use area, just below Glen Canyon Dam (15 miles upstream max).
+              You decide how long you want to paddle and we&apos;ll drop you off
+              accordingly. Two hours or all day &mdash; it&apos;s up to you.
             </p>
+
+            {/* What to expect */}
+            <ul className="bh-heading mb-8 space-y-2.5 max-w-lg">
+              {[
+                "Kayak rentals do not include water taxi or backhaul shuttle",
+                "Choose how long you want to be on the river — 2 hours or all day",
+                "Meet us at the Lees Ferry boat launch ramp on the Colorado River",
+                "No need to transport any boats — we provide everything",
+                "Safe and pleasant trip down the river, all skill levels welcome",
+              ].map((point) => (
+                <li
+                  key={point}
+                  className="text-cool-white/50 text-[14px] font-light flex items-start gap-3 leading-relaxed"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-sandstone/60 mt-2 flex-shrink-0" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+
             <div className="flex flex-col sm:flex-row gap-6 mb-8">
               <div className="p-6 bg-cool-white/[0.03] border border-cool-white/[0.06]">
                 <span className="block font-serif text-3xl text-sandstone mb-1">$80</span>
@@ -102,7 +121,7 @@ export default function Backhaul() {
             </div>
             <p className="bh-heading text-cool-white/35 text-[13px] font-light leading-relaxed max-w-lg">
               No canoes or watercraft exceeding 15 feet. No watercraft with frames.
-              Additional $80 charge for gear exceeding 50 lbs total.
+              Additional $80 charge for gear and watercraft exceeding 50 lbs total.
             </p>
           </div>
 
@@ -138,8 +157,8 @@ export default function Backhaul() {
             {
               icon: ArrowUp,
               step: "02",
-              title: "Jet Boat Ride Upriver",
-              text: "We blast 10 miles upriver through the Horseshoe Bend corridor. The canyon views from water level are absolutely unreal.",
+              title: "You Pick the Drop-Off",
+              text: "Tell us how long you want to paddle. Most folks ride 10 miles up to Petroglyph Beach, but we'll drop you anywhere up to 15 miles below the dam.",
               accent: "border-sandstone/20 hover:border-sandstone/50",
               iconColor: "text-sandstone",
             },
@@ -147,7 +166,7 @@ export default function Backhaul() {
               icon: ArrowDown,
               step: "03",
               title: "Paddle Back in Paradise",
-              text: "We drop you off upstream and you float 15 miles back through crystal-clear waters, hidden fern grottoes, ancient petroglyphs, and towering canyon walls.",
+              text: "Float back downstream through crystal-clear waters, hidden fern grottoes, ancient petroglyphs, and towering canyon walls — at your own pace.",
               accent: "border-sunset-gold/20 hover:border-sunset-gold/50",
               iconColor: "text-sunset-gold",
             },
@@ -184,7 +203,7 @@ export default function Backhaul() {
         <div className="mt-14 flex items-center justify-center gap-3 text-center">
           <Zap className="text-canyon-orange" size={16} strokeWidth={1.5} />
           <span className="text-[12px] tracking-[0.3em] uppercase text-canyon-orange/80 font-light">
-            The only jet boat backhaul service at Lees Ferry
+            Family owned and operated &middot; Guiding Lees Ferry since 1999
           </span>
           <Zap className="text-canyon-orange" size={16} strokeWidth={1.5} />
         </div>
