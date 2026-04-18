@@ -100,14 +100,14 @@ export default function Services() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-20 md:mb-28">
-          <span className="svc-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
+          <span className="svc-heading block text-xs tracking-[0.25em] uppercase text-sandstone mb-6">
             Our Services
           </span>
           <h2 className="svc-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-6">
             2025 Guide{" "}
             <span className="italic text-sandstone">Rates</span>
           </h2>
-          <p className="svc-heading text-cool-white/40 text-base font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="svc-heading text-warm-cream text-lg font-normal max-w-2xl mx-auto leading-relaxed">
             Water taxi &amp; kayak rentals, plus guided fishing trips on the
             Colorado River at Lees Ferry. Family owned and operated &mdash;
             guiding Lees Ferry since 1999. Maximum 4 people per boat.
@@ -136,7 +136,7 @@ export default function Services() {
 
                   {/* Tag */}
                   {svc.tag && (
-                    <div className="absolute top-4 right-4 px-4 py-1.5 bg-sandstone text-canyon-deep text-[9px] tracking-[0.3em] uppercase font-bold">
+                    <div className="absolute top-4 right-4 px-4 py-1.5 bg-sandstone text-canyon-deep text-xs tracking-[0.15em] uppercase font-bold">
                       {svc.tag}
                     </div>
                   )}
@@ -146,7 +146,7 @@ export default function Services() {
                     <span className="block font-serif text-3xl text-sandstone">
                       {svc.price}
                     </span>
-                    <span className="block text-[10px] tracking-[0.2em] uppercase text-cool-white/50 mt-0.5">
+                    <span className="block text-xs tracking-[0.2em] uppercase text-cool-white/50 mt-0.5">
                       {svc.priceNote}
                     </span>
                   </div>
@@ -165,7 +165,7 @@ export default function Services() {
                     </h3>
                   </div>
 
-                  <p className="text-cool-white/45 font-light text-[14px] leading-relaxed mb-8">
+                  <p className="text-warm-cream font-normal text-lg leading-relaxed mb-8">
                     {svc.description}
                   </p>
 
@@ -174,7 +174,7 @@ export default function Services() {
                     {svc.features.map((f) => (
                       <li
                         key={f}
-                        className="text-[13px] text-cool-white/40 font-light flex items-start gap-3"
+                        className="text-base text-cool-white/80 font-light flex items-start gap-3"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-sandstone/60 mt-1.5 flex-shrink-0" />
                         {f}
@@ -184,7 +184,7 @@ export default function Services() {
 
                   <a
                     href="#booking"
-                    className="inline-flex items-center gap-2 text-sandstone text-[12px] tracking-[0.2em] uppercase font-light hover:text-canyon-orange group/link transition-colors"
+                    className="inline-flex items-center gap-2 text-sandstone text-sm tracking-[0.2em] uppercase font-light hover:text-canyon-orange group/link transition-colors"
                   >
                     Book This Trip
                     <ArrowRight
@@ -212,7 +212,7 @@ export default function Services() {
               "8 Hours on the Water",
               "Flies & Lures",
             ].map((item) => (
-              <div key={item} className="text-cool-white/45 text-[13px] font-light">
+              <div key={item} className="text-warm-cream text-lg font-normal">
                 <span className="block w-2 h-2 rounded-full bg-sandstone/50 mx-auto mb-3" />
                 {item}
               </div>

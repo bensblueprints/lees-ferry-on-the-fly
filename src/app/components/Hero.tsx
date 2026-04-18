@@ -24,8 +24,8 @@ export default function Hero() {
       )
         .fromTo(
           ".hero-line",
-          { y: 100, opacity: 0, skewY: 3 },
-          { y: 0, opacity: 1, skewY: 0, duration: 1.1, stagger: 0.12 },
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.9, stagger: 0.12 },
           "-=0.5"
         )
         .fromTo(
@@ -73,11 +73,12 @@ export default function Hero() {
         </video>
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 hero-gradient" />
+      {/* Stronger overlay for readable text */}
+      <div className="absolute inset-0 bg-canyon-deep/65" />
+      <div className="absolute inset-0 bg-gradient-to-b from-canyon-deep/40 via-canyon-deep/30 to-canyon-deep" />
 
       {/* Vignette edges */}
-      <div className="absolute inset-0 shadow-[inset_0_0_200px_60px_rgba(11,22,34,0.4)]" />
+      <div className="absolute inset-0 shadow-[inset_0_0_220px_80px_rgba(11,22,34,0.65)]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 w-full text-center">
@@ -94,16 +95,16 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="font-serif leading-[0.92] mb-8">
-          <span className="hero-line block text-[clamp(2.8rem,9vw,7.5rem)] text-cool-white text-glow-blue">
+          <span className="hero-line block text-[clamp(2.8rem,9vw,7.5rem)] text-cool-white">
             Lees Ferry
           </span>
-          <span className="hero-line block text-[clamp(1.8rem,5vw,4rem)] text-canyon-orange italic font-light mt-2 text-glow-orange">
+          <span className="hero-line block text-[clamp(1.8rem,5vw,4rem)] text-canyon-orange italic font-light mt-2">
             On The Fly
           </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="hero-sub text-cool-white/70 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed mb-12">
+        <p className="hero-sub text-warm-cream text-xl md:text-2xl font-normal max-w-3xl mx-auto leading-relaxed mb-14">
           Water taxi &amp; kayak rentals through Horseshoe Bend. Guided fly
           fishing &amp; spin fishing on the Colorado River. Family owned and
           operated &mdash; guiding Lees Ferry since 1999.
@@ -113,13 +114,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-5 justify-center mb-20">
           <a
             href="#booking"
-            className="hero-cta inline-flex items-center justify-center px-12 py-4.5 bg-sandstone text-canyon-deep text-[12px] tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400 hover:tracking-[0.3em]"
+            className="hero-cta inline-flex items-center justify-center px-12 py-4.5 bg-sandstone text-canyon-deep text-sm tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400 hover:tracking-[0.15em]"
           >
             Book Your Trip
           </a>
           <a
             href="tel:+19283804504"
-            className="hero-cta inline-flex items-center justify-center gap-2 px-12 py-4.5 border border-cool-white/25 text-cool-white text-[12px] tracking-[0.2em] uppercase font-light hover:border-sandstone/50 hover:text-sandstone transition-all duration-400"
+            className="hero-cta inline-flex items-center justify-center gap-2 px-12 py-4.5 border border-cool-white/25 text-cool-white text-sm tracking-[0.2em] uppercase font-light hover:border-sandstone/50 hover:text-sandstone transition-all duration-400"
           >
             <Phone size={14} />
             (928) 380-4504
@@ -135,10 +136,10 @@ export default function Hero() {
             { label: "Guiding Since", value: "1999" },
           ].map((s) => (
             <div key={s.label} className="hero-stat">
-              <span className="block text-[9px] tracking-[0.4em] uppercase text-sandstone/70 mb-1">
+              <span className="block text-sm tracking-[0.18em] uppercase text-sandstone-light mb-1.5 font-medium">
                 {s.label}
               </span>
-              <span className="text-cool-white/60 text-[14px] font-light">
+              <span className="text-warm-cream text-lg font-normal">
                 {s.value}
               </span>
             </div>

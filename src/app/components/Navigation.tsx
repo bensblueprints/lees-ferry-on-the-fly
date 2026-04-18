@@ -66,7 +66,7 @@ export default function Navigation() {
               <span className="font-serif text-lg text-cool-white leading-none block">
                 Lees Ferry
               </span>
-              <span className="text-[9px] tracking-[0.4em] uppercase text-sandstone font-light">
+              <span className="text-xs tracking-[0.2em] uppercase text-sandstone font-light">
                 On The Fly
               </span>
             </div>
@@ -78,7 +78,7 @@ export default function Navigation() {
               <button
                 key={l.href}
                 onClick={() => nav(l.href)}
-                className="text-[12px] tracking-[0.18em] uppercase text-cool-white/60 hover:text-sandstone transition-colors duration-300 font-light"
+                className="text-sm tracking-[0.18em] uppercase text-cool-white/90 hover:text-sandstone transition-colors duration-300 font-light"
               >
                 {l.label}
               </button>
@@ -89,7 +89,7 @@ export default function Navigation() {
           <div className="hidden xl:flex items-center gap-5">
             <a
               href="tel:+19283804504"
-              className="flex items-center gap-2 text-sandstone text-[13px] font-light hover:text-sunset-gold transition-colors"
+              className="flex items-center gap-2 text-sandstone text-base font-light hover:text-sunset-gold transition-colors"
             >
               <Phone size={14} strokeWidth={1.5} />
               (928) 380-4504
@@ -100,7 +100,7 @@ export default function Navigation() {
                 e.preventDefault();
                 nav("#booking");
               }}
-              className="px-7 py-2.5 bg-sandstone text-canyon-deep text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400"
+              className="px-7 py-2.5 bg-sandstone text-canyon-deep text-sm tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400"
             >
               Book Now
             </a>
@@ -134,7 +134,7 @@ export default function Navigation() {
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ delay: i * 0.06, duration: 0.35 }}
                 onClick={() => nav(l.href)}
-                className="text-xl tracking-[0.12em] uppercase text-cool-white/70 hover:text-sandstone font-light"
+                className="text-xl tracking-[0.12em] uppercase text-cool-white/90 hover:text-sandstone font-light"
               >
                 {l.label}
               </motion.button>
@@ -154,7 +154,7 @@ export default function Navigation() {
               </a>
               <button
                 onClick={() => nav("#booking")}
-                className="px-10 py-3.5 bg-sandstone text-canyon-deep text-[12px] tracking-[0.25em] uppercase font-semibold"
+                className="px-10 py-3.5 bg-sandstone text-canyon-deep text-sm tracking-[0.25em] uppercase font-semibold"
               >
                 Book Now
               </button>

@@ -122,14 +122,14 @@ export default function Gallery() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24">
-          <span className="gal-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
+          <span className="gal-heading block text-xs tracking-[0.25em] uppercase text-sandstone mb-6">
             Gallery
           </span>
           <h2 className="gal-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-5">
             Life on the{" "}
             <span className="italic text-sandstone">Colorado</span>
           </h2>
-          <p className="gal-heading text-cool-white/40 text-base font-light max-w-lg mx-auto leading-relaxed">
+          <p className="gal-heading text-warm-cream text-lg font-normal max-w-lg mx-auto leading-relaxed">
             Real photos from real trips. This is what&apos;s waiting for you
             at Lees Ferry.
           </p>
@@ -157,7 +157,7 @@ export default function Gallery() {
 
               {/* Content on hover */}
               <div className="absolute inset-0 p-5 flex flex-col justify-end z-10">
-                <span className="text-[9px] tracking-[0.4em] uppercase text-sandstone/0 group-hover:text-sandstone/90 translate-y-3 group-hover:translate-y-0 transition-all duration-500 mb-1">
+                <span className="text-xs tracking-[0.2em] uppercase text-sandstone/0 group-hover:text-sandstone/90 translate-y-3 group-hover:translate-y-0 transition-all duration-500 mb-1">
                   {photo.subtitle}
                 </span>
                 <h3 className="font-serif text-lg text-cool-white/0 group-hover:text-cool-white translate-y-3 group-hover:translate-y-0 transition-all duration-500 delay-75">

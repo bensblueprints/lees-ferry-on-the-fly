@@ -98,7 +98,7 @@ export default function HowItWorks() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-20 md:mb-28">
-          <span className="hiw-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
+          <span className="hiw-heading block text-xs tracking-[0.25em] uppercase text-sandstone mb-6">
             How It Works
           </span>
           <h2 className="hiw-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
@@ -136,14 +136,14 @@ export default function HowItWorks() {
                   {/* Content */}
                   <div className="flex-1 pt-1">
                     <div className="flex items-center gap-4 mb-3">
-                      <span className="text-[10px] tracking-[0.4em] text-cool-white/15">
+                      <span className="text-xs tracking-[0.2em] text-cool-white/90">
                         STEP {step.number}
                       </span>
                     </div>
                     <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-cool-white/45 font-light text-[14px] leading-relaxed max-w-lg">
+                    <p className="text-warm-cream font-normal text-lg leading-relaxed max-w-lg">
                       {step.text}
                     </p>
                   </div>

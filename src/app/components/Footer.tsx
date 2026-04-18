@@ -43,24 +43,24 @@ export default function Footer() {
                 <span className="font-serif text-lg text-cool-white block leading-none">
                   Lees Ferry
                 </span>
-                <span className="text-[9px] tracking-[0.35em] uppercase text-sandstone font-light">
+                <span className="text-xs tracking-[0.18em] uppercase text-sandstone font-light">
                   On The Fly
                 </span>
               </div>
             </div>
-            <p className="text-cool-white/35 text-[14px] font-light leading-relaxed max-w-sm mb-8">
+            <p className="text-cool-white/75 text-base font-light leading-relaxed max-w-sm mb-8">
               Guided fly fishing &amp; spin fishing trips, jet boat kayak &amp;
               paddleboard shuttle service on the Colorado River at Lees Ferry,
               Arizona.
             </p>
             <div className="space-y-3">
-              <a href="tel:+19283804504" className="flex items-center gap-3 text-sandstone text-[14px] font-light hover:text-canyon-orange transition-colors">
+              <a href="tel:+19283804504" className="flex items-center gap-3 text-sandstone text-base font-light hover:text-canyon-orange transition-colors">
                 <Phone size={14} strokeWidth={1.5} /> (928) 380-4504
               </a>
-              <a href="mailto:info@leesferryonthefly.com" className="flex items-center gap-3 text-cool-white/40 text-[14px] font-light hover:text-sandstone transition-colors">
+              <a href="mailto:info@leesferryonthefly.com" className="flex items-center gap-3 text-warm-cream text-lg font-normal hover:text-sandstone transition-colors">
                 <Mail size={14} strokeWidth={1.5} /> info@leesferryonthefly.com
               </a>
-              <span className="flex items-center gap-3 text-cool-white/40 text-[14px] font-light">
+              <span className="flex items-center gap-3 text-warm-cream text-lg font-normal">
                 <MapPin size={14} strokeWidth={1.5} /> Marble Canyon, AZ 86036
               </span>
             </div>
@@ -69,13 +69,13 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(links).map(([title, items]) => (
             <div key={title}>
-              <h4 className="text-[9px] tracking-[0.4em] uppercase text-sandstone mb-6">
+              <h4 className="text-xs tracking-[0.2em] uppercase text-sandstone mb-6">
                 {title}
               </h4>
               <ul className="space-y-3">
                 {items.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="text-cool-white/30 text-[14px] font-light hover:text-sandstone transition-colors duration-300">
+                    <a href={item.href} className="text-warm-cream text-lg font-normal hover:text-sandstone transition-colors duration-300">
                       {item.label}
                     </a>
                   </li>
@@ -88,10 +88,10 @@ export default function Footer() {
         {/* Bottom */}
         <div className="cinema-bar mb-8" />
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <span className="text-cool-white/20 text-[12px] font-light">
+          <span className="text-cool-white/90 text-sm font-light">
             &copy; {new Date().getFullYear()} Lees Ferry On The Fly. All rights reserved.
           </span>
-          <span className="text-cool-white/20 text-[12px] font-light">
+          <span className="text-cool-white/90 text-sm font-light">
             Dave Trimble &middot; Owner / USCG Licensed Captain &middot; Marble Canyon, Arizona
           </span>
         </div>

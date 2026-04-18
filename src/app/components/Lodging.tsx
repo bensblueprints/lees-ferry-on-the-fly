@@ -47,14 +47,14 @@ export default function Lodging() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-20 md:mb-28">
-          <span className="lodge-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
+          <span className="lodge-heading block text-xs tracking-[0.25em] uppercase text-sandstone mb-6">
             Where to Stay
           </span>
           <h2 className="lodge-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-6">
             Lodging &amp;{" "}
             <span className="italic text-sandstone">Dining</span>
           </h2>
-          <p className="lodge-heading text-cool-white/40 text-base font-light max-w-xl mx-auto leading-relaxed">
+          <p className="lodge-heading text-warm-cream text-lg font-normal max-w-xl mx-auto leading-relaxed">
             Our top pick is our friends at Vermilion Cliffs Lodge. Marble Canyon
             Lodge is another solid option just minutes from the boat launch.
           </p>
@@ -64,14 +64,14 @@ export default function Lodging() {
         <div className="lodge-cards grid grid-cols-1 lg:grid-cols-3 gap-2 max-w-5xl mx-auto">
           {/* TOP PICK: Vermilion Cliffs */}
           <div className="lodge-card group relative p-10 md:p-12 bg-cool-white/[0.02] border border-sandstone/30 hover:border-sandstone/60 transition-all duration-500">
-            <div className="absolute top-4 right-4 px-3 py-1 bg-sandstone text-canyon-deep text-[9px] tracking-[0.3em] uppercase font-bold">
+            <div className="absolute top-4 right-4 px-3 py-1 bg-sandstone text-canyon-deep text-xs tracking-[0.15em] uppercase font-bold">
               Top Pick
             </div>
             <Star className="text-sandstone mb-6" size={28} strokeWidth={1.2} />
             <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-4">
               Vermilion Cliffs Lodge
             </h3>
-            <p className="text-cool-white/45 font-light text-[14px] leading-relaxed mb-6">
+            <p className="text-warm-cream font-normal text-lg leading-relaxed mb-6">
               Our friends at Vermilion Cliffs offer the best stay in the area
               &mdash; right under the towering red cliffs. This is where we send
               our clients first.
@@ -80,7 +80,7 @@ export default function Lodging() {
               href="https://www.vermilioncliffs.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sandstone text-[13px] font-light hover:text-canyon-orange transition-colors"
+              className="inline-flex items-center gap-2 text-sandstone text-base font-light hover:text-canyon-orange transition-colors"
             >
               <ExternalLink size={14} strokeWidth={1.5} />
               vermilioncliffs.com
@@ -93,14 +93,14 @@ export default function Lodging() {
             <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-4">
               Historic Marble Canyon Lodge
             </h3>
-            <p className="text-cool-white/45 font-light text-[14px] leading-relaxed mb-6">
+            <p className="text-warm-cream font-normal text-lg leading-relaxed mb-6">
               A historic lodge with comfortable rooms right at the gateway to
               Lees Ferry. Whether you&apos;re here to fish, whitewater raft, or kayak
               the scenic Horseshoe Bend &mdash; this is a great place to stay.
             </p>
             <a
               href="tel:+18007261789"
-              className="inline-flex items-center gap-2 text-sandstone text-[13px] font-light hover:text-canyon-orange transition-colors"
+              className="inline-flex items-center gap-2 text-sandstone text-base font-light hover:text-canyon-orange transition-colors"
             >
               <Phone size={14} strokeWidth={1.5} />
               1-800-726-1789
@@ -113,19 +113,19 @@ export default function Lodging() {
             <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-4">
               Marble Canyon Restaurant
             </h3>
-            <p className="text-cool-white/45 font-light text-[14px] leading-relaxed mb-6">
+            <p className="text-warm-cream font-normal text-lg leading-relaxed mb-6">
               Great dining right on-site at Marble Canyon Lodge. Fuel up before
               your trip or enjoy a meal after a long day on the water. They
               also carry local fly patterns and lures in their shop.
             </p>
-            <span className="text-cool-white/30 text-[12px] tracking-[0.2em] uppercase font-light">
+            <span className="text-cool-white/90 text-sm tracking-[0.2em] uppercase font-light">
               On-site at Marble Canyon Lodge
             </span>
           </div>
         </div>
 
         {/* Note about more lodging coming */}
-        <p className="text-center text-cool-white/30 text-[12px] tracking-[0.15em] uppercase font-light mt-12">
+        <p className="text-center text-cool-white/90 text-sm tracking-[0.15em] uppercase font-light mt-12">
           More lodging options in Page, AZ coming soon
         </p>
       </div>

@@ -55,7 +55,7 @@ export default function BookingCTA() {
   ) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
   const inputClass =
-    "w-full bg-transparent border-b border-cool-white/10 focus:border-sandstone/60 text-cool-white text-[14px] font-light pb-3 outline-none transition-colors duration-300 placeholder:text-cool-white/15";
+    "w-full bg-transparent border-b border-cool-white/10 focus:border-sandstone/60 text-cool-white text-base font-light pb-3 outline-none transition-colors duration-300 placeholder:text-cool-white/90";
 
   return (
     <section id="booking" ref={ref} className="relative py-32 md:py-44 overflow-hidden">
@@ -75,14 +75,14 @@ export default function BookingCTA() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-20 md:mb-28">
-          <span className="book-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
+          <span className="book-heading block text-xs tracking-[0.25em] uppercase text-sandstone mb-6">
             Book Your Trip
           </span>
           <h2 className="book-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-6">
             Ready to Hit the{" "}
             <span className="italic text-sandstone">Water?</span>
           </h2>
-          <p className="book-heading text-cool-white/45 text-base font-light max-w-xl mx-auto">
+          <p className="book-heading text-warm-cream text-lg font-normal max-w-xl mx-auto">
             To book a fishing trip, give us a call or send an email.
           </p>
         </div>
@@ -97,10 +97,10 @@ export default function BookingCTA() {
               <Phone className="text-sandstone" size={28} strokeWidth={1.5} />
             </div>
             <div className="text-left">
-              <span className="block text-[10px] tracking-[0.3em] uppercase text-cool-white/30 mb-1">
+              <span className="block text-xs tracking-[0.15em] uppercase text-cool-white/90 mb-1">
                 Call Dave Trimble directly
               </span>
-              <span className="font-serif text-3xl md:text-4xl text-sandstone phone-glow group-hover:text-canyon-orange transition-colors">
+              <span className="font-serif text-3xl md:text-4xl text-sandstone group-hover:text-canyon-orange transition-colors">
                 (928) 380-4504
               </span>
             </div>
@@ -118,29 +118,29 @@ export default function BookingCTA() {
                 <a href="tel:+19283804504" className="flex items-start gap-4 group">
                   <Phone className="text-sandstone mt-0.5 group-hover:scale-110 transition-transform" size={17} strokeWidth={1.5} />
                   <div>
-                    <span className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-1.5">Phone</span>
-                    <span className="text-cool-white/70 font-light group-hover:text-sandstone transition-colors">(928) 380-4504</span>
+                    <span className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-1.5">Phone</span>
+                    <span className="text-cool-white/90 font-light group-hover:text-sandstone transition-colors">(928) 380-4504</span>
                   </div>
                 </a>
                 <a href="mailto:info@leesferryonthefly.com" className="flex items-start gap-4 group">
                   <Mail className="text-sandstone mt-0.5 group-hover:scale-110 transition-transform" size={17} strokeWidth={1.5} />
                   <div>
-                    <span className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-1.5">Email</span>
-                    <span className="text-cool-white/70 font-light group-hover:text-sandstone transition-colors">info@leesferryonthefly.com</span>
+                    <span className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-1.5">Email</span>
+                    <span className="text-cool-white/90 font-light group-hover:text-sandstone transition-colors">info@leesferryonthefly.com</span>
                   </div>
                 </a>
                 <div className="flex items-start gap-4">
                   <MapPin className="text-sandstone mt-0.5" size={17} strokeWidth={1.5} />
                   <div>
-                    <span className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-1.5">Location</span>
-                    <span className="text-cool-white/70 font-light">Lees Ferry Boat Launch<br />Marble Canyon, AZ 86036</span>
+                    <span className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-1.5">Location</span>
+                    <span className="text-cool-white/90 font-light">Lees Ferry Boat Launch<br />Marble Canyon, AZ 86036</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Clock className="text-sandstone mt-0.5" size={17} strokeWidth={1.5} />
                   <div>
-                    <span className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-1.5">Hours</span>
-                    <span className="text-cool-white/70 font-light">Year-round operation<br />Trips typically start at 7:00 AM</span>
+                    <span className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-1.5">Hours</span>
+                    <span className="text-cool-white/90 font-light">Year-round operation<br />Trips typically start at 7:00 AM</span>
                   </div>
                 </div>
               </div>
@@ -154,19 +154,19 @@ export default function BookingCTA() {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
-                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Full Name</label>
+                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Full Name</label>
                 <input type="text" name="name" value={form.name} onChange={onChange} placeholder="Your name" className={inputClass} />
               </div>
               <div>
-                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Email</label>
+                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Email</label>
                 <input type="email" name="email" value={form.email} onChange={onChange} placeholder="you@email.com" className={inputClass} />
               </div>
               <div>
-                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Phone</label>
+                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Phone</label>
                 <input type="tel" name="phone" value={form.phone} onChange={onChange} placeholder="(555) 000-0000" className={inputClass} />
               </div>
               <div>
-                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Service</label>
+                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Service</label>
                 <select name="service" value={form.service} onChange={onChange} className={`${inputClass} [&>option]:bg-canyon-deep [&>option]:text-cool-white`}>
                   <option value="">Select a service</option>
                   <option value="fly-fishing">Fly Fishing (1-2 anglers) — $600</option>
@@ -177,11 +177,11 @@ export default function BookingCTA() {
                 </select>
               </div>
               <div>
-                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Preferred Date</label>
+                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Preferred Date</label>
                 <input type="date" name="date" value={form.date} onChange={onChange} className={`${inputClass} [color-scheme:dark]`} />
               </div>
               <div>
-                <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Group Size</label>
+                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Group Size</label>
                 <select name="guests" value={form.guests} onChange={onChange} className={`${inputClass} [&>option]:bg-canyon-deep [&>option]:text-cool-white`}>
                   <option value="">Select</option>
                   <option value="1">1 Person</option>
@@ -192,7 +192,7 @@ export default function BookingCTA() {
               </div>
             </div>
             <div className="mb-10">
-              <label className="block text-[9px] tracking-[0.4em] uppercase text-cool-white/25 mb-3">Message</label>
+              <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Message</label>
               <textarea
                 name="message"
                 value={form.message}
@@ -204,7 +204,7 @@ export default function BookingCTA() {
             </div>
             <button
               type="submit"
-              className="w-full md:w-auto flex items-center justify-center gap-3 px-14 py-4.5 bg-sandstone text-canyon-deep text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400 hover:tracking-[0.3em] group"
+              className="w-full md:w-auto flex items-center justify-center gap-3 px-14 py-4.5 bg-sandstone text-canyon-deep text-sm tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400 hover:tracking-[0.15em] group"
             >
               Send Inquiry
               <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -220,9 +220,9 @@ export default function BookingCTA() {
               Booking &amp; Cancellation Policy
             </h3>
           </div>
-          <div className="space-y-4 text-cool-white/40 text-[13px] font-light leading-relaxed max-w-3xl">
+          <div className="space-y-4 text-warm-cream text-lg font-normal leading-relaxed max-w-3xl">
             <p>
-              We require a <strong className="text-cool-white/60 font-normal">$100 non-refundable deposit</strong> to
+              We require a <strong className="text-cool-white/90 font-normal">$100 non-refundable deposit</strong> to
               reserve a day. This can be done over the phone by calling Dave Trimble at (928) 380-4504.
               The balance is due at the end of your trip.
             </p>
@@ -247,7 +247,7 @@ export default function BookingCTA() {
                 You may not re-schedule more than once. All cancellations must be submitted in writing.
               </li>
             </ul>
-            <p className="text-cool-white/30 text-[12px] mt-4">
+            <p className="text-cool-white/90 text-sm mt-4">
               For backhaul shuttle: 50% service fee for cancellations with more than 72 hours notice.
               Cancellations within 72 hours or arrivals 10+ minutes late forfeit all refunds.
             </p>

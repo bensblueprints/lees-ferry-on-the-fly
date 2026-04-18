@@ -96,7 +96,7 @@ export default function FAQ() {
       <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24">
-          <span className="faq-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
+          <span className="faq-heading block text-xs tracking-[0.25em] uppercase text-sandstone mb-6">
             FAQ
           </span>
           <h2 className="faq-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
@@ -120,7 +120,7 @@ export default function FAQ() {
                 >
                   <span
                     className={`font-serif text-lg md:text-xl pr-8 transition-colors duration-300 ${
-                      isOpen ? "text-sandstone" : "text-cool-white group-hover:text-sandstone/80"
+                      isOpen ? "text-sandstone" : "text-cool-white group-hover:text-sandstone-light"
                     }`}
                   >
                     {faq.q}
@@ -129,13 +129,13 @@ export default function FAQ() {
                     {isOpen ? (
                       <Minus className="text-sandstone" size={18} strokeWidth={1.5} />
                     ) : (
-                      <Plus className="text-cool-white/30 group-hover:text-sandstone/60 transition-colors" size={18} strokeWidth={1.5} />
+                      <Plus className="text-cool-white/90 group-hover:text-sandstone-light transition-colors" size={18} strokeWidth={1.5} />
                     )}
                   </span>
                 </button>
                 <div className={`faq-answer ${isOpen ? "open" : ""}`}>
                   <div>
-                    <p className="text-cool-white/45 font-light text-[14px] leading-relaxed pb-7 pr-12">
+                    <p className="text-warm-cream font-normal text-lg leading-relaxed pb-7 pr-12">
                       {faq.a}
                     </p>
                   </div>

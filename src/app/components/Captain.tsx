@@ -50,30 +50,30 @@ export default function Captain() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Content */}
           <div>
-            <span className="cap-content block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
+            <span className="cap-content block text-xs tracking-[0.25em] uppercase text-sandstone mb-6">
               Meet Your Guide
             </span>
             <h2 className="cap-content font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-6">
               Dave{" "}
               <span className="italic text-sandstone">Trimble</span>
             </h2>
-            <div className="cap-content text-[10px] tracking-[0.3em] uppercase text-cool-white/30 mb-10">
+            <div className="cap-content text-xs tracking-[0.15em] uppercase text-cool-white/90 mb-10">
               Owner &middot; USCG Licensed Captain &middot; Fishing Guide
             </div>
 
-            <p className="cap-content text-cool-white/55 text-base font-light leading-relaxed mb-5">
+            <p className="cap-content text-warm-cream text-lg font-normal leading-relaxed mb-5">
               Dave Trimble has been guiding Lees Ferry since 1999 &mdash; a
               family owned and operated outfit with hundreds of guide days on
               this legendary stretch of the Colorado River. He knows every
               bend, eddy, and hidden grotto along the corridor.
             </p>
-            <p className="cap-content text-cool-white/45 text-[15px] font-light leading-relaxed mb-6">
+            <p className="cap-content text-cool-white/85 text-[15px] font-light leading-relaxed mb-6">
               As sole owner and operator, Dave personally captains every trip —
               whether it&apos;s a guided fly fishing charter targeting trophy rainbow
               and brown trout in the gin-clear tailwaters, or a jet boat shuttle
               through the stunning Horseshoe Bend corridor.
             </p>
-            <p className="cap-content text-cool-white/40 text-[14px] font-light leading-relaxed mb-12">
+            <p className="cap-content text-warm-cream text-lg font-normal leading-relaxed mb-12">
               He carries a well-stocked guide box featuring Sage and Echo fly rods,
               Galvan fly reels, and custom hand-tied flies — many of which are
               available for purchase at the nearby Marble Canyon Lodge.
@@ -94,10 +94,10 @@ export default function Captain() {
                       size={24}
                       strokeWidth={1.3}
                     />
-                    <span className="block text-cool-white text-[14px] mb-1">
+                    <span className="block text-cool-white text-base mb-1">
                       {t.label}
                     </span>
-                    <span className="block text-cool-white/30 text-[12px] font-light">
+                    <span className="block text-cool-white/90 text-sm font-light">
                       {t.sublabel}
                     </span>
                   </div>
@@ -107,7 +107,7 @@ export default function Captain() {
 
             <a
               href="tel:+19283804504"
-              className="cap-content inline-flex items-center gap-3 px-10 py-4 border border-sandstone/30 text-sandstone text-[12px] tracking-[0.2em] uppercase font-light hover:bg-sandstone/10 hover:border-sandstone/60 transition-all duration-400"
+              className="cap-content inline-flex items-center gap-3 px-10 py-4 border border-sandstone/30 text-sandstone text-sm tracking-[0.2em] uppercase font-light hover:bg-sandstone/10 hover:border-sandstone/60 transition-all duration-400"
             >
               <Phone size={15} strokeWidth={1.5} />
               Call Dave: (928) 380-4504

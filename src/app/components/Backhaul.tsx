@@ -62,7 +62,7 @@ export default function Backhaul() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
         {/* Section label centered */}
         <div className="text-center mb-20 md:mb-24">
-          <span className="bh-heading block text-[10px] tracking-[0.5em] uppercase text-sandstone mb-6">
+          <span className="bh-heading block text-xs tracking-[0.25em] uppercase text-sandstone mb-6">
             The Experience
           </span>
           <h2 className="bh-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05]">
@@ -74,7 +74,7 @@ export default function Backhaul() {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24 md:mb-32">
           <div>
-            <p className="bh-heading text-cool-white/55 text-base md:text-lg font-light leading-relaxed mb-8 max-w-lg">
+            <p className="bh-heading text-cool-white/90 text-base md:text-lg font-light leading-relaxed mb-8 max-w-lg">
               We transport you and your kayak or paddleboard{" "}
               <strong className="text-water-light font-normal">upstream</strong>{" "}
               to a destination of your choice &mdash; typically{" "}
@@ -95,7 +95,7 @@ export default function Backhaul() {
               ].map((point) => (
                 <li
                   key={point}
-                  className="text-cool-white/50 text-[14px] font-light flex items-start gap-3 leading-relaxed"
+                  className="text-cool-white/50 text-base font-light flex items-start gap-3 leading-relaxed"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-sandstone/60 mt-2 flex-shrink-0" />
                   {point}
@@ -106,20 +106,20 @@ export default function Backhaul() {
             <div className="flex flex-col sm:flex-row gap-6 mb-8">
               <div className="p-6 bg-cool-white/[0.03] border border-cool-white/[0.06]">
                 <span className="block font-serif text-3xl text-sandstone mb-1">$80</span>
-                <span className="text-[11px] tracking-[0.2em] uppercase text-cool-white/40">Per Person</span>
-                <p className="text-cool-white/35 text-[12px] mt-2 font-light">
+                <span className="text-sm tracking-[0.2em] uppercase text-cool-white/80">Per Person</span>
+                <p className="text-cool-white/75 text-sm mt-2 font-light">
                   Includes upstream transport for you + one watercraft under 50 lbs
                 </p>
               </div>
               <div className="p-6 bg-cool-white/[0.03] border border-cool-white/[0.06]">
                 <span className="block font-serif text-3xl text-sandstone mb-1">From $40</span>
-                <span className="text-[11px] tracking-[0.2em] uppercase text-cool-white/40">Kayak Rentals</span>
-                <p className="text-cool-white/35 text-[12px] mt-2 font-light">
+                <span className="text-sm tracking-[0.2em] uppercase text-cool-white/80">Kayak Rentals</span>
+                <p className="text-cool-white/75 text-sm mt-2 font-light">
                   Plus tax and booking fee. SUP rentals also available.
                 </p>
               </div>
             </div>
-            <p className="bh-heading text-cool-white/35 text-[13px] font-light leading-relaxed max-w-lg">
+            <p className="bh-heading text-cool-white/75 text-base font-light leading-relaxed max-w-lg">
               No canoes or watercraft exceeding 15 feet. No watercraft with frames.
               Additional $80 charge for gear and watercraft exceeding 50 lbs total.
             </p>
@@ -136,7 +136,7 @@ export default function Backhaul() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-canyon-deep/60 via-transparent to-canyon-deep/20" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
-              <span className="text-[10px] tracking-[0.3em] uppercase text-sandstone/80">
+              <span className="text-xs tracking-[0.15em] uppercase text-sandstone-light">
                 Shuttle departures from Lees Ferry launch ramp
               </span>
             </div>
@@ -183,14 +183,14 @@ export default function Backhaul() {
                     size={28}
                     strokeWidth={1.2}
                   />
-                  <span className="text-[11px] tracking-[0.3em] text-cool-white/15 font-light">
+                  <span className="text-sm tracking-[0.15em] text-cool-white/90 font-light">
                     {item.step}
                   </span>
                 </div>
                 <h3 className="font-serif text-xl md:text-2xl text-cool-white mb-4">
                   {item.title}
                 </h3>
-                <p className="text-cool-white/45 font-light text-[14px] leading-relaxed">
+                <p className="text-warm-cream font-normal text-lg leading-relaxed">
                   {item.text}
                 </p>
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sandstone/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
@@ -202,7 +202,7 @@ export default function Backhaul() {
         {/* Differentiator callout */}
         <div className="mt-14 flex items-center justify-center gap-3 text-center">
           <Zap className="text-canyon-orange" size={16} strokeWidth={1.5} />
-          <span className="text-[12px] tracking-[0.3em] uppercase text-canyon-orange/80 font-light">
+          <span className="text-sm tracking-[0.15em] uppercase text-canyon-orange/80 font-light">
             Family owned and operated &middot; Guiding Lees Ferry since 1999
           </span>
           <Zap className="text-canyon-orange" size={16} strokeWidth={1.5} />
