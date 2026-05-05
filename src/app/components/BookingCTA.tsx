@@ -122,11 +122,11 @@ export default function BookingCTA() {
                     <span className="text-cool-white/90 font-light group-hover:text-sandstone transition-colors">(928) 380-4504</span>
                   </div>
                 </a>
-                <a href="mailto:info@leesferryonthefly.com" className="flex items-start gap-4 group">
+                <a href="mailto:leesferryonthefly@gmail.com" className="flex items-start gap-4 group">
                   <Mail className="text-sandstone mt-0.5 group-hover:scale-110 transition-transform" size={17} strokeWidth={1.5} />
                   <div>
                     <span className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-1.5">Email</span>
-                    <span className="text-cool-white/90 font-light group-hover:text-sandstone transition-colors">info@leesferryonthefly.com</span>
+                    <span className="text-cool-white/90 font-light group-hover:text-sandstone transition-colors">leesferryonthefly@gmail.com</span>
                   </div>
                 </a>
                 <div className="flex items-start gap-4">

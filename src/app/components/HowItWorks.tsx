@@ -13,7 +13,7 @@ const steps = [
     icon: CalendarCheck,
     number: "01",
     title: "Book Online or Call",
-    text: "Reserve your trip by calling Dave directly at (928) 380-4504 or email info@leesferryonthefly.com. A $100 deposit is required to secure your date.",
+    text: "Reserve your trip by calling Dave directly at (928) 380-4504 or email leesferryonthefly@gmail.com. A $100 deposit is required to secure your date.",
     color: "text-water-light",
     border: "border-water-light/20",
   },

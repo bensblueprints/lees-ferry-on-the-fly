@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: "How do I book a trip?",
-    a: "Call Dave Trimble directly at (928) 380-4504 or email info@leesferryonthefly.com. We recommend booking at least a few days in advance, especially during peak season (March-October).",
+    a: "Call Dave Trimble directly at (928) 380-4504 or email leesferryonthefly@gmail.com. We recommend booking at least a few days in advance, especially during peak season (March-October).",
   },
 ];
 

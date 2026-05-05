@@ -57,8 +57,8 @@ export default function Footer() {
               <a href="tel:+19283804504" className="flex items-center gap-3 text-sandstone text-base font-light hover:text-canyon-orange transition-colors">
                 <Phone size={14} strokeWidth={1.5} /> (928) 380-4504
               </a>
-              <a href="mailto:info@leesferryonthefly.com" className="flex items-center gap-3 text-warm-cream text-lg font-normal hover:text-sandstone transition-colors">
-                <Mail size={14} strokeWidth={1.5} /> info@leesferryonthefly.com
+              <a href="mailto:leesferryonthefly@gmail.com" className="flex items-center gap-3 text-warm-cream text-lg font-normal hover:text-sandstone transition-colors">
+                <Mail size={14} strokeWidth={1.5} /> leesferryonthefly@gmail.com
               </a>
               <span className="flex items-center gap-3 text-warm-cream text-lg font-normal">
                 <MapPin size={14} strokeWidth={1.5} /> Marble Canyon, AZ 86036
