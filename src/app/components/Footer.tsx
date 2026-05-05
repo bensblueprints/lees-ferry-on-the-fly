@@ -95,6 +95,11 @@ export default function Footer() {
             Dave Trimble &middot; Owner / USCG Licensed Captain &middot; Marble Canyon, Arizona
           </span>
         </div>
+        <div className="mt-6 text-center">
+          <a href="https://advancedmarketing.co" target="_blank" rel="noopener noreferrer" className="text-cool-white/50 text-xs font-light hover:text-sandstone transition-colors">
+            Website Design and Online Marketing by Advanced Marketing
+          </a>
+        </div>
       </div>
     </footer>
   );
