@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
-    q: "What are the 2025 guide rates?",
+    q: "What are the 2026 guide rates?",
     a: "Fly fishing is $650 for 1 angler or $700 for 2 anglers. Spin fishing is $700 for 1-3 anglers or $800 for 4 anglers. There's a $25 charge for any non-fishing passenger. Maximum 4 people per boat. We do NOT fly fish 3 or 4 anglers.",
   },
   {

@@ -104,13 +104,11 @@ export default function Services() {
             Our Services
           </span>
           <h2 className="svc-heading font-serif text-4xl md:text-5xl lg:text-6xl text-cool-white leading-[1.05] mb-6">
-            2025 Guide{" "}
+            2026 Guide{" "}
             <span className="italic text-sandstone">Rates</span>
           </h2>
           <p className="svc-heading text-warm-cream text-lg font-normal max-w-2xl mx-auto leading-relaxed">
-            Water taxi &amp; kayak rentals, plus guided fishing trips on the
-            Colorado River at Lees Ferry. Family owned and operated &mdash;
-            guiding Lees Ferry since 1999. Maximum 4 people per boat.
+            Backhaul water taxi service, kayak rentals and guided fishing on the Colorado River at Lee&apos;s Ferry since 1999. Family owned and operated.
           </p>
         </div>
 
@@ -183,7 +181,9 @@ export default function Services() {
                   </ul>
 
                   <a
-                    href="#booking"
+                    href="https://book.peek.com/s/d760d72d-cfb5-45af-bdd4-69d4c67350a1/KM4WD"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sandstone text-sm tracking-[0.2em] uppercase font-light hover:text-canyon-orange group/link transition-colors"
                   >
                     Book This Trip

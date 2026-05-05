@@ -1,26 +1,16 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Send, Clock, AlertTriangle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, AlertTriangle } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BookingCTA() {
   const ref = useRef<HTMLDivElement>(null);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    date: "",
-    guests: "",
-    message: "",
-  });
-
   useGSAP(
     () => {
       gsap.fromTo(
@@ -49,13 +39,6 @@ export default function BookingCTA() {
     },
     { scope: ref }
   );
-
-  const onChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
-
-  const inputClass =
-    "w-full bg-transparent border-b border-cool-white/10 focus:border-sandstone/60 text-cool-white text-base font-light pb-3 outline-none transition-colors duration-300 placeholder:text-cool-white/90";
 
   return (
     <section id="booking" ref={ref} className="relative py-32 md:py-44 overflow-hidden">
@@ -109,7 +92,7 @@ export default function BookingCTA() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-2">
           {/* Contact info sidebar */}
-          <div className="book-content lg:col-span-2 bg-cool-white/[0.02] border border-cool-white/[0.04] p-8 md:p-12 flex flex-col justify-between">
+          <div className="book-content lg:col-span-5 bg-cool-white/[0.02] border border-cool-white/[0.04] p-8 md:p-12 flex flex-col justify-between">
             <div>
               <h3 className="font-serif text-2xl text-cool-white mb-10">
                 Contact Info
@@ -147,69 +130,6 @@ export default function BookingCTA() {
             </div>
           </div>
 
-          {/* Form */}
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="book-content lg:col-span-3 bg-cool-white/[0.02] border border-cool-white/[0.04] p-8 md:p-12"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Full Name</label>
-                <input type="text" name="name" value={form.name} onChange={onChange} placeholder="Your name" className={inputClass} />
-              </div>
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Email</label>
-                <input type="email" name="email" value={form.email} onChange={onChange} placeholder="you@email.com" className={inputClass} />
-              </div>
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Phone</label>
-                <input type="tel" name="phone" value={form.phone} onChange={onChange} placeholder="(555) 000-0000" className={inputClass} />
-              </div>
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Service</label>
-                <select name="service" value={form.service} onChange={onChange} className={`${inputClass} [&>option]:bg-canyon-deep [&>option]:text-cool-white`}>
-                  <option value="">Select a service</option>
-                  <option value="fly-fishing">Fly Fishing (1-2 anglers) — $600</option>
-                  <option value="spin-fishing-3">Spin Fishing (up to 3) — $700</option>
-                  <option value="spin-fishing-4">Spin Fishing (4 anglers) — $800</option>
-                  <option value="backhaul">Backhaul Shuttle — $80/person</option>
-                  <option value="kayak-rental">Kayak Rental — From $40</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Preferred Date</label>
-                <input type="date" name="date" value={form.date} onChange={onChange} className={`${inputClass} [color-scheme:dark]`} />
-              </div>
-              <div>
-                <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Group Size</label>
-                <select name="guests" value={form.guests} onChange={onChange} className={`${inputClass} [&>option]:bg-canyon-deep [&>option]:text-cool-white`}>
-                  <option value="">Select</option>
-                  <option value="1">1 Person</option>
-                  <option value="2">2 People</option>
-                  <option value="3">3 People</option>
-                  <option value="4">4 People (max per boat)</option>
-                </select>
-              </div>
-            </div>
-            <div className="mb-10">
-              <label className="block text-xs tracking-[0.2em] uppercase text-cool-white/90 mb-3">Message</label>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={onChange}
-                rows={3}
-                placeholder="Tell us about your trip — experience level, gear needs, questions..."
-                className={`${inputClass} resize-none`}
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full md:w-auto flex items-center justify-center gap-3 px-14 py-4.5 bg-sandstone text-canyon-deep text-sm tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400 hover:tracking-[0.15em] group"
-            >
-              Send Inquiry
-              <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
-            </button>
-          </form>
         </div>
 
         {/* Booking & Cancellation Policy */}

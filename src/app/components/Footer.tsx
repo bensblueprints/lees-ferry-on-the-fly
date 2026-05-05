@@ -5,22 +5,22 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const links = {
   Services: [
-    { label: "Fly Fishing Trips", href: "#services" },
-    { label: "Spin Fishing Trips", href: "#services" },
-    { label: "Backhaul Shuttle", href: "#backhaul" },
-    { label: "Kayak & SUP Rentals", href: "#backhaul" },
+    { label: "Fly Fishing Trips", href: "/#services" },
+    { label: "Spin Fishing Trips", href: "/#services" },
+    { label: "Backhaul Shuttle", href: "/backhaul" },
+    { label: "Kayak & SUP Rentals", href: "/backhaul" },
   ],
   Info: [
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "What to Bring", href: "#faq" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Cancellation Policy", href: "#booking" },
+    { label: "How It Works", href: "/#how-it-works" },
+    { label: "What to Bring", href: "/#faq" },
+    { label: "FAQ", href: "/#faq" },
+    { label: "Cancellation Policy", href: "/booking" },
   ],
   Area: [
-    { label: "Marble Canyon Lodge", href: "#lodging" },
-    { label: "Lodging & Dining", href: "#lodging" },
-    { label: "Meet Your Guide", href: "#guide" },
-    { label: "Gallery", href: "#gallery" },
+    { label: "Marble Canyon Lodge", href: "/lodging" },
+    { label: "Lodging & Dining", href: "/lodging" },
+    { label: "Meet Your Guide", href: "/guides" },
+    { label: "Gallery", href: "/#gallery" },
   ],
 };
 

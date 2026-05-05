@@ -1,20 +1,28 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Services & Rates", href: "#services" },
-  { label: "Backhaul", href: "#backhaul" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Your Guide", href: "#guide" },
-  { label: "Lodging", href: "#lodging" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Services & Rates", href: "/#services" },
+  { label: "Backhaul", href: "/backhaul" },
+  { label: "Boat & Gear", href: "/boat-gear" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Guides", href: "/guides" },
+  { label: "Lodging", href: "/lodging" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Entries", href: "/entries" },
 ];
 
+const PEEKPRO_URL =
+  "https://book.peek.com/s/d760d72d-cfb5-45af-bdd4-69d4c67350a1/KM4WD";
+
 export default function Navigation() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -28,9 +36,17 @@ export default function Navigation() {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
   }, [mobileOpen]);
 
-  const nav = (href: string) => {
+  const handleNav = (href: string) => {
     setMobileOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("/#") && pathname === "/") {
+      const id = href.replace("/#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+    window.location.href = href;
   };
 
   return (
@@ -47,11 +63,13 @@ export default function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 flex items-center justify-between h-[76px]">
           {/* Logo */}
-          <a
-            href="#"
+          <Link
+            href="/"
             onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
             }}
             className="relative z-10 flex items-center gap-3"
           >
@@ -60,7 +78,7 @@ export default function Navigation() {
               alt="Lees Ferry On The Fly"
               width={48}
               height={48}
-              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              className="w-12 h-12 object-contain"
             />
             <div className="hidden sm:block">
               <span className="font-serif text-lg text-cool-white leading-none block">
@@ -70,14 +88,14 @@ export default function Navigation() {
                 On The Fly
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <div className="hidden xl:flex items-center gap-8">
             {navLinks.map((l) => (
               <button
                 key={l.href}
-                onClick={() => nav(l.href)}
+                onClick={() => handleNav(l.href)}
                 className="text-sm tracking-[0.18em] uppercase text-cool-white/90 hover:text-sandstone transition-colors duration-300 font-light"
               >
                 {l.label}
@@ -95,11 +113,9 @@ export default function Navigation() {
               (928) 380-4504
             </a>
             <a
-              href="#booking"
-              onClick={(e) => {
-                e.preventDefault();
-                nav("#booking");
-              }}
+              href={PEEKPRO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-7 py-2.5 bg-sandstone text-canyon-deep text-sm tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400"
             >
               Book Now
@@ -133,7 +149,7 @@ export default function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ delay: i * 0.06, duration: 0.35 }}
-                onClick={() => nav(l.href)}
+                onClick={() => handleNav(l.href)}
                 className="text-xl tracking-[0.12em] uppercase text-cool-white/90 hover:text-sandstone font-light"
               >
                 {l.label}
@@ -152,12 +168,14 @@ export default function Navigation() {
                 <Phone size={18} />
                 (928) 380-4504
               </a>
-              <button
-                onClick={() => nav("#booking")}
+              <a
+                href={PEEKPRO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-3.5 bg-sandstone text-canyon-deep text-sm tracking-[0.25em] uppercase font-semibold"
               >
                 Book Now
-              </button>
+              </a>
             </motion.div>
           </motion.div>
         )}

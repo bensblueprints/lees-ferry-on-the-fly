@@ -83,7 +83,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 w-full text-center">
         {/* Logo mark */}
-        <div className="hero-logo mb-10 flex justify-center">
+        <div className="hero-logo mb-10 flex justify-start md:justify-center">
           <Image
             src="/images/logo.png"
             alt="Lees Ferry On The Fly"
@@ -95,10 +95,10 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="font-serif leading-[0.92] mb-8">
-          <span className="hero-line block text-[clamp(2.8rem,9vw,7.5rem)] text-cool-white">
+          <span className="hero-line block text-[clamp(1.8rem,5vw,4rem)] text-cool-white">
             Lees Ferry
           </span>
-          <span className="hero-line block text-[clamp(1.8rem,5vw,4rem)] text-canyon-orange italic font-light mt-2">
+          <span className="hero-line block text-[clamp(2.8rem,9vw,7.5rem)] text-canyon-orange italic font-light mt-2">
             On The Fly
           </span>
         </h1>
@@ -113,7 +113,9 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-5 justify-center mb-20">
           <a
-            href="#booking"
+            href="https://book.peek.com/s/d760d72d-cfb5-45af-bdd4-69d4c67350a1/KM4WD"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hero-cta inline-flex items-center justify-center px-12 py-4.5 bg-sandstone text-canyon-deep text-sm tracking-[0.25em] uppercase font-semibold hover:bg-canyon-orange transition-all duration-400 hover:tracking-[0.15em]"
           >
             Book Your Trip
