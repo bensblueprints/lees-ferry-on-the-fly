@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Raleway } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -178,6 +179,18 @@ export default function RootLayout({
       className={`${playfair.variable} ${raleway.variable} h-full antialiased`}
     >
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9C9PNSK5R9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9C9PNSK5R9');
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
