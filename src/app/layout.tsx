@@ -179,6 +179,12 @@ export default function RootLayout({
       className={`${playfair.variable} ${raleway.variable} h-full antialiased`}
     >
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9C9PNSK5R9"
           strategy="afterInteractive"
@@ -191,12 +197,6 @@ export default function RootLayout({
             gtag('config', 'G-9C9PNSK5R9');
           `}
         </Script>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className="min-h-full flex flex-col">
         <div className="grain" />
         <Navigation />
         {children}
