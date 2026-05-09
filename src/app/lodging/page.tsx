@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Lodging & Dining",
   description:
     "Where to stay and eat near Lees Ferry, Arizona. Top picks include Vermilion Cliffs Lodge and Historic Marble Canyon Lodge. Restaurants, hotels, and camping options.",
+  alternates: { canonical: "/lodging" },
   openGraph: {
     title: "Lodging & Dining | Lees Ferry On The Fly",
     description:

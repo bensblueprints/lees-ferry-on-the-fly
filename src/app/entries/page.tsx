@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Entries & Reports",
   description:
     "Fishing reports, trip stories, and news from Lees Ferry On The Fly. Stay up to date with conditions, catches, and stories from the Colorado River.",
+  alternates: { canonical: "/entries" },
   openGraph: {
     title: "Entries & Reports | Lees Ferry On The Fly",
     description:
